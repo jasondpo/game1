@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faceout</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <link rel='stylesheet' href='assets/css/main.css'>
+    <link
+        href='http://fonts.googleapis.com/css?family=Roboto:400,100italic,100,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed:400,300,400italic,700italic,700,300italic'
+        rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+
+    <div class="messageContainer"></div>
+    <div class="hintBox"></div>
+    <div class="solveBox">
+        <form action="index.php">
+            <input type="text" id="solveField" placeholder="Enter your best guess">
+            <input type="submit" id="solveBtn">
+        </form>
+    </div>
+    <div class="overlay"></div>
+    <div class="scoreContainer">
+        Score<br>
+        <input type="text" name="score" id="score" value="100">
+    </div>
+    <div class="stopWatch grow">Time</div>
+    <div class="cursor"></div>
+    <div class="voice"></div>
+
+    <header>
+        <div class="logo"></div>
+        <div class="glasses"></div>
+        <div class='eyes-container'>
+            <div class='eye'></div>
+            <div class='eye'></div>
+        </div>
+    </header>
+
+    <section class="move-area"></section>
+
+    <div class="puzzleLayerContainer"></div>
+    <div class="imageContainer"></div>
+    <div class="rightTopFace"></div>
+    <div class="rightBottomFace"></div>
+
+    <div class="dot1 dotStyle" onmouseover="message('dot1')"></div>
+    <div class="dot2 dotStyle" onmouseover="message('dot2')"></div>
+    <div class="dot3 dotStyle" onmouseover="message('dot3')"></div>
+    <div class="dot4 dotStyle" onmouseover="message('dot4')"></div>
+    <div class="dot5 dotStyle" onmouseover="message('dot5')"></div>
+</body>
+
+<footer>
+    <div class="navBtn grow quit">
+        <h11>Quit (press Q)</h11>
+    </div>
+    <div class="navBtn grow hint">
+        <h11>Clue (hold C)</h11>
+    </div>
+    <div class="navBtn grow solve">
+        <h11>Solve (press S)</h11>
+    </div>
+    <div class="navBtn grow remove">
+        <h11>Piece (press P)</h11>
+    </div>
+</footer>
+
+<script src='assets/js/main.js'></script>
+<script src='assets/js/eyes.js'></script>
+<script src='assets/js/messages.js'></script>
+<script src='assets/js/score.js'></script>
+<script src='assets/js/stopWatch.js'></script>
+
+
+</html>
