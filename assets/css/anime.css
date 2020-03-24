@@ -1,0 +1,19 @@
+.animeBox{
+    position: absolute;
+    left:50%;
+    margin: 100px 0px 0px -200px;
+    width: 400px;
+    height: 400px;
+    background-image: url(testVideo.png);
+    background-position: 0px 0px;
+    /* animation: walk 2s steps(63); */
+}
+
+@keyframes walk {
+    from  {background-position:0px 0px;}
+    to {background-position:-25200px 0px;}
+  }
+ 
+  .animeBoxPlay{
+    animation: walk 2s steps(63) infinite;
+  }

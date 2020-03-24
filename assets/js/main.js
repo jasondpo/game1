@@ -25,7 +25,7 @@ loadLayers()
 
 
 function featuredImage() {
-    $(".imageContainer").css('background-image', 'url(assets/images/faces/idris_elba.png)')
+    $(".imageContainer").css('background-image', 'url(assets/images/faces/testVideo.png)')
 }
 featuredImage();
 
@@ -42,6 +42,19 @@ $(document).on("keydown", function (event) {
         setTimeout(function () { $("#solveField").focus(); }, 100)
     } if (event.which == 81) { // Q
         alert("Quit");
+    }
+});
+
+$(document).keydown(function (e) {
+    if (e.which == 71) {
+        $(".imageContainer").addClass("animeBoxPlay");
+        $(".puzzleLayerContainer").addClass("imageContainerStopFloat");
+    }
+});
+$(document).keyup(function (e) {
+    if (e.which == 71) {
+        $(".imageContainer").removeClass("animeBoxPlay");
+        $(".puzzleLayerContainer").removeClass("imageContainerStopFloat");
     }
 });
 
