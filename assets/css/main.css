@@ -3,7 +3,8 @@ html, body {
   margin: 0px;
   padding: 0px;
   font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
   cursor: none;
   overflow: hidden;
 }
