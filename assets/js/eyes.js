@@ -1,4 +1,4 @@
-$(".move-area, .dotStyle, .rightTopFace,  .rightBottomFace, .puzzleLayerContainer, .puzzleLayer, .navBtn, header").mousemove(function (event) {
+$(".move-area, .dotStyle, .rightTopFace,  .rightBottomFace, .puzzleLayerContainer, .puzzleLayer, .navBtn, .leaderboard, header").mousemove(function (event) {
     var eye = $(".eye");
     var x = (eye.offset().left) + (eye.width() / 2);
     var y = (eye.offset().top) + (eye.height() / 2);
