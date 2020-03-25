@@ -1,5 +1,5 @@
 html, body{
-    background-color: #F9F9F9;
+    background-color: #F0F2F5;
     margin:0px;
     padding: 0px;
     font-size: 14px;
@@ -29,6 +29,62 @@ h12 span{  // pieces left clue
     font-weight: bold;
     color: rgb(255, 41, 41);
 }
+h13{ // player profile name
+    display: block;
+    width: 125px;
+    height: 12px;
+    margin: 13px 0px 8px 0px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+}
+h14{ // player profile score
+    display: block;
+    width: 125px;
+    height: 12px;
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: 400; 
+    letter-spacing: .02em;
+    color: #666;
+}
+h15{ // player profile time
+    display: block;
+    width: 125px;
+    height: 12px;
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: 400; 
+    letter-spacing: .02em;
+    color: #666;
+}
+h16{
+    position: absolute;
+    bottom: 4px;
+    left:13px;
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+}
+h17{ // Category
+   position: fixed;
+   width: 220px;
+   display: block;
+   background-color: #E9EBEE;
+   background-image: url(../images/misc/elipsis-v.svg);
+   background-size: 6px 12px;
+   background-position: 190px 15px;
+   background-repeat: no-repeat;
+   text-align: right;
+   box-sizing:border-box;
+   padding: 13px 38px 13px 0px;
+   color: #888;
+   font-size: 14px;
+   z-index: 2;
+}
+h17:hover{
+    background-color: #E8E8E8;
+}
 
 .logo{
     position: fixed;
@@ -40,7 +96,15 @@ h12 span{  // pieces left clue
     background-image: url(../images/logo/faceout_logo.svg);
     background-repeat: no-repeat;
 }
-
+.userProfilePic{
+    position: absolute;
+    right:40px;
+    top:8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background-color: #1D2A47;
+}
 
 input:focus {
     outline:0;
@@ -54,8 +118,8 @@ header{
     left:0;
     right: 0;
     height: 40px;
-    background-color: #333;
-    border-bottom:1px solid #E8E8E8;
+    background-color: #435273;
+    border-bottom:1px solid #2E4A7E;
     z-index: 3;
 }
 
@@ -339,15 +403,14 @@ sidebar{
     height: 40px;
     width: 130px;
 }
-
 .leaderboard{
     position: fixed;
     width: 220px;
     left:0px;
     top:40px;
     bottom:0px;
-    background-color: #F3F3F3;
-    border-right: 1px solid #e3e3e3;
+    background-color: #E9EBEE;
+    overflow-x: hidden;
 }
 
 /// Hint box
