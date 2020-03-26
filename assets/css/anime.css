@@ -16,4 +16,5 @@
  
   .animeBoxPlay{
     animation: walk 2s steps(63) infinite;
+    border:1px solid #333 !important;     
   }

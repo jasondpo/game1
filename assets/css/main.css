@@ -36,11 +36,14 @@ h12 span {
 h13 {
   display: block;
   width: 125px;
-  height: 12px;
-  margin: 13px 0px 8px 0px;
+  height: 16px;
+  margin: 13px 0px 4px 0px;
   font-size: 14px;
-  font-weight: 700;
-  color: #333;
+  font-weight: 400;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
 }
 
 h14 {
@@ -51,7 +54,7 @@ h14 {
   margin-bottom: 5px;
   font-weight: 400;
   letter-spacing: .02em;
-  color: #666;
+  color: #9096A2;
 }
 
 h15 {
@@ -62,7 +65,7 @@ h15 {
   margin-bottom: 5px;
   font-weight: 400;
   letter-spacing: .02em;
-  color: #666;
+  color: #9096A2;
 }
 
 h16 {
@@ -72,6 +75,7 @@ h16 {
   display: block;
   font-size: 18px;
   font-weight: 500;
+  color: #435273;
 }
 
 h17 {
@@ -86,21 +90,22 @@ h17 {
   text-align: right;
   box-sizing: border-box;
   padding: 13px 38px 13px 0px;
-  color: #888;
+  color: #9096A2;
   font-size: 14px;
+  transition: background-color .15s linear;
   z-index: 2;
 }
 
 h17:hover {
-  background-color: #E8E8E8;
+  background-color: #DDDFE2;
 }
 
 .logo {
   position: fixed;
-  top: 12px;
-  left: 30px;
+  top: 14px;
+  left: 24px;
   width: 90px;
-  height: 16px;
+  height: 18px;
   background-size: contain;
   background-image: url(../images/logo/faceout_logo.svg);
   background-repeat: no-repeat;
@@ -167,7 +172,7 @@ header {
   position: absolute;
   width: 400px;
   height: 400px;
-  z-index: 2;
+  z-index: 3;
   border-radius: 8px;
   box-shadow: 0 0.4px 0.8px rgba(0, 0, 0, 0.02), 0 1.1px 1.9px rgba(0, 0, 0, 0.028), 0 2px 3.5px rgba(0, 0, 0, 0.035), 0 3.6px 6.3px rgba(0, 0, 0, 0.042), 0 6.7px 11.7px rgba(0, 0, 0, 0.05), 0 16px 28px rgba(0, 0, 0, 0.07);
   transform: translatey(0px);
@@ -195,8 +200,9 @@ header {
   width: 402px;
   height: 402px;
   border-radius: 8px;
-  z-index: 1;
+  z-index: 2;
   transform: translatey(0px);
+  transition: border .15s linear;
   animation: float 8s ease-in-out infinite;
 }
 
@@ -227,7 +233,7 @@ header {
   border-radius: 100%;
   background-color: #DDD;
   transition: transform .25s;
-  z-index: 3;
+  z-index: 0;
 }
 
 .rightTopFace:hover {
@@ -235,10 +241,14 @@ header {
 }
 
 .rightTopFace:hover::after {
-  content: " Smarty";
-  font-weight: bold;
+  content: "Mark, \A the genius";
+  white-space: pre;
+  color: #435273;
+  font-weight: 500;
+  font-size: 12px;
   display: block;
-  padding: 14px 0px 0px 54px;
+  line-height: 1.2em;
+  padding: 10px 0px 0px 54px;
 }
 
 .rightBottomFace {
@@ -252,7 +262,7 @@ header {
   border-radius: 100%;
   background-color: #DDD;
   transition: transform .25s;
-  z-index: 3;
+  z-index: 0;
 }
 
 .rightBottomFace:hover {
@@ -260,10 +270,14 @@ header {
 }
 
 .rightBottomFace:hover::after {
-  content: " Dummy";
-  font-weight: bold;
+  content: "Kenye, \A the dummy";
+  white-space: pre;
+  color: #435273;
+  font-weight: 500;
+  font-size: 12px;
   display: block;
-  padding: 14px 0px 0px 54px;
+  line-height: 1.2em;
+  padding: 10px 0px 0px 54px;
 }
 
 .dotStyle {
@@ -271,14 +285,14 @@ header {
   width: 11px;
   height: 11px;
   border-radius: 100%;
-  z-index: 3;
-  background-color: #DDD;
+  z-index: 0;
+  background-color: #ccd4df;
   left: 50%;
   transition: transform .25s;
 }
 
 .dotActive {
-  background-color: #00aeff;
+  background-color: #77AFFA;
   transform: scale(1.25);
   font-size: 12px;
   transition: transform .25s;
@@ -292,7 +306,7 @@ header {
   content: "You";
   font-weight: bold;
   display: block;
-  color: #00aeff;
+  color: #77AFFA;
   padding-left: 18px;
 }
 
@@ -376,14 +390,14 @@ header {
   width: 9px;
   box-sizing: border-box;
   height: 9px;
-  background-color: #666;
+  background-color: #435273;
   border-radius: 50%;
   transition: background-color .25s linear;
   content: " ";
 }
 
 .blue:after {
-  background-color: #00aeff;
+  background-color: #77AFFA;
 }
 
 .red:after {
@@ -458,12 +472,28 @@ sidebar {
   right: 0;
   bottom: 0px;
   top: 0;
-  background-color: rgba(212, 179, 161, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   background-image: url(../images/misc/close.png);
   background-repeat: no-repeat;
   background-position: right 22px top 22px;
   z-index: 6;
   display: none;
+}
+
+.darkScreen {
+  position: fixed;
+  left: 220px;
+  right: 0;
+  bottom: 0px;
+  top: 40px;
+  background-color: transparent;
+  z-index: 0;
+  transition: all .15s linear;
+}
+
+.darkScreenActive {
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 #solveField {

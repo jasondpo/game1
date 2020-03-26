@@ -10,25 +10,19 @@
     display: flex;
     width: 230px;
     height: 76px;
+    transition: background-color .15s linear;
 }
 .playerContainer:hover{
     background-color: #DDDFE2;
 }
-.playerContainer:hover:after{
-    content: "";
-    position: absolute;
-    width:10px;
-    height: 76px;
-    right:0px;
-    background-color: #E8E8E8;
-}
-
 
 .playerProfile{
     width: 50px;
     height: 50px;
     border-radius: 4px;
     margin: 13px 10px 13px 13px;
+    background-size: 140%;
+    background-position: center center;
     background-color: #DDDFE2;
 }
 .playerRating{
@@ -45,7 +39,7 @@
     left: 6px;
     box-sizing: border-box;
     border: 2px solid #F3F3F3;
-    background-color: #1D2A47; 
+    background-color: #435273; 
   
 }
 
@@ -68,7 +62,7 @@
     border-radius:4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #DDD !important;
+    background-color: rgb(205, 208, 211) !important;
   }
 
   ::-webkit-scrollbar-track:hover {

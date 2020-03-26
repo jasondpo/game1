@@ -46,15 +46,21 @@ $(document).on("keydown", function (event) {
 });
 
 $(document).keydown(function (e) {
-    if (e.which == 71) {
+    if (e.which == 71) { // G
         $(".imageContainer").addClass("animeBoxPlay");
         $(".puzzleLayerContainer").addClass("imageContainerStopFloat");
+        $(".stopWatch").css('z-index', '0');
+        $(".darkScreen").addClass("darkScreenActive");
+        $(".eyes-container, .glasses").css("margin", "-100px 0px 0px -45px")
     }
 });
 $(document).keyup(function (e) {
-    if (e.which == 71) {
+    if (e.which == 71) { //G
         $(".imageContainer").removeClass("animeBoxPlay");
         $(".puzzleLayerContainer").removeClass("imageContainerStopFloat");
+        $(".darkScreen").removeClass("darkScreenActive");
+        $(".stopWatch").css('z-index', '');
+        $(".eyes-container, .glasses ").css("margin", "")
     }
 });
 

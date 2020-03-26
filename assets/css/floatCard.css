@@ -1,0 +1,35 @@
+.card-floating-socialIcons{
+	position: absolute;
+	box-sizing: border-box;
+	padding: 12px 0px;
+	z-index: 5;
+	width: 198px;
+	height: 100px;
+	/* background-color: $dark-grey; */
+	display: none;
+	border-radius: 3px;
+	box-shadow: 0px 0px 18px 8px rgba(40, 40, 40, .25);
+}
+.card-floating-socialIcons-arrowDown{
+	position: absolute;
+	left: 10px;
+	bottom: -7px;
+	width: 0; 
+	height: 0; 
+	margin: 20px 0px 0px 0px;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;	
+	/* border-top: 8px solid $dark-grey; */
+	display: none;
+}
+.card-floating-socialIcons-arrowUp{
+	position: absolute;
+	left: 10px;
+	top: -7px;
+	width: 0; 
+	height: 0; 
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	/* border-bottom: 8px solid $dark-grey; */
+	display: none;
+}
