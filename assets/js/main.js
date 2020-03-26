@@ -89,6 +89,21 @@ function showHint() {
 }
 //////////// controls for clue END
 
+
+//////////// controls for Categories START
+$("h17").click(function(){
+    $(".categoriesContainer").toggle();
+    $(".card-floating-socialIcons").hide();
+})
+
+$('html').click(function() {
+    $(".categoriesContainer").hide();
+  });
+
+  $('h17, .categoriesContainer').click(function(event){
+    event.stopPropagation();
+});
+
 ////////// Keyboard Controls END ////////// 
 
 

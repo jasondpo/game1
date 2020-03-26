@@ -1,3 +1,16 @@
+.leaderboard{
+  position: fixed;
+  width: 220px;
+  left:0px;
+  top:40px;
+  bottom:0px;
+  background-color: #E9EBEE;
+  overflow: hidden;
+}
+.leaderboard:hover{
+  overflow: auto;
+  overflow-x: hidden;
+}
 .topPlayersSpacer{
     position: relative;
     display: flex;
@@ -15,7 +28,6 @@
 .playerContainer:hover{
     background-color: #DDDFE2;
 }
-
 .playerProfile{
     width: 50px;
     height: 50px;
@@ -24,6 +36,7 @@
     background-size: 140%;
     background-position: center center;
     background-color: #DDDFE2;
+    pointer-events: none;
 }
 .playerRating{
     position: absolute;
@@ -39,8 +52,22 @@
     left: 6px;
     box-sizing: border-box;
     border: 2px solid #F3F3F3;
-    background-color: #435273; 
-  
+    background-color: #435273;
+    pointer-events: none; 
+}
+.playerStatsContainer{
+  pointer-events: none; 
+}
+//////
+.categoriesContainer{
+  position: fixed;
+  z-index: 3;
+  top:80px;
+  left:0px;
+  bottom:0px;
+  width: 220px;
+  background-color: #3A404D;
+  display: none;
 }
 
 // scrollbar
