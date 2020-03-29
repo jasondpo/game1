@@ -2,7 +2,7 @@
 	position: absolute;
 	box-sizing: border-box;
 	padding: 12px 0px;
-	z-index:999;
+	z-index:5;
 	width: 340px;
 	height: 140px;
 	background-color: white;
@@ -57,7 +57,7 @@
 	top:10px;
 	left:10px;
 }
-.fa-pencil-alt{
+.fas{
 	position: absolute;
 	left:120px;
 	top:48px;

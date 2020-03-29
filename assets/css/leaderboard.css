@@ -1,11 +1,34 @@
 .leaderboard {
   position: fixed;
+  z-index: 2;
   width: 220px;
   left: 0px;
   top: 40px;
-  bottom: 0px;
+  bottom: 34px;
   background-color: #E9EBEE;
   overflow: hidden;
+}
+
+.leftArrow, .rightArrow, .downArrow {
+  border: solid;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.downArrow {
+  transform: rotate(45deg) scale(0.7) translate(0px, -3px);
+  -webkit-transform: rotate(45deg) scale(0.7) translate(0px, -3px);
+}
+
+.rightArrow {
+  transform: rotate(-45deg) scale(0.7) translate(0px, -3px);
+  -webkit-transform: rotate(-45deg) scale(0.7) translate(0px, -3px);
+}
+
+.leftArrow {
+  transform: rotate(135deg) scale(0.77) translate(0px, 2px);
+  -webkit-transform: rotate(135deg) scale(0.77) translate(0px, 2px);
 }
 
 .leaderboard:hover {
@@ -46,6 +69,7 @@
 .playerRating {
   position: absolute;
   display: flex;
+  padding-right: 2px;
   justify-content: center;
   align-items: center;
   color: white;
@@ -58,22 +82,12 @@
   box-sizing: border-box;
   border: 2px solid #F3F3F3;
   background-color: #435273;
+  letter-spacing: -.1em;
   pointer-events: none;
 }
 
 .playerStatsContainer {
   pointer-events: none;
-}
-
-.categoriesContainer {
-  position: fixed;
-  z-index: 3;
-  top: 80px;
-  left: 0px;
-  bottom: 0px;
-  width: 220px;
-  background-color: #3A404D;
-  display: none;
 }
 
 /* width */

@@ -25,7 +25,7 @@ loadLayers()
 
 
 function featuredImage() {
-    $(".imageContainer").css('background-image', 'url(assets/images/faces/testVideo.png)')
+    $(".imageContainer").css('background-image', 'url(assets/images/faces/idris_elba.png)')
 }
 featuredImage();
 
@@ -90,21 +90,9 @@ function showHint() {
 //////////// controls for clue END
 
 
-//////////// controls for Categories START
-$("h17").click(function(){
-    $(".categoriesContainer").toggle();
-    $(".card-floating-socialIcons").hide();
-})
 
-$('html').click(function() {
-    $(".categoriesContainer").hide();
-  });
 
-  $('h17, .categoriesContainer').click(function(event){
-    event.stopPropagation();
-});
 
-////////// Keyboard Controls END ////////// 
 
 
 //////////// Regular Click Navigation STARTS //////////// 
