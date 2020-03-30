@@ -81,28 +81,3 @@ $(".navBtn").mouseover(function () {
 $(".navBtn").mouseleave(function () {
     $(".eye").removeClass("red");
 });
-
-
-// Start stopwatch animation on page load
-function startTimer() {
-    $('.stopWatch').css("background-image", "url(assets/images/watch/stopWatch1.png)");
-    var timer = 1;
-    mainTimer = setInterval(function () {
-        timer++
-        if (timer == 1) {
-            $('.stopWatch').css("background-image", "url(assets/images/watch/stopWatch1.png)");
-        } if (timer == 2) {
-            $('.stopWatch').css("background-image", "url(assets/images/watch/stopWatch2.png)");
-        } if (timer == 3) {
-            $('.stopWatch').css("background-image", "url(assets/images/watch/stopWatch3.png)");
-        } if (timer == 4) {
-            $('.stopWatch').css("background-image", "url(assets/images/watch/stopWatch4.png)");
-        }
-        if (timer == 4) { timer = 0 }
-    }, 1000);
-}
-startTimer();
-
-function stopTimer() {
-    clearInterval(mainTimer);
-}

@@ -13,6 +13,7 @@
     <link rel='stylesheet' href='assets/css/floatCard.css'>
     <link rel='stylesheet' href='assets/css/bottomNav.css'>
     <link rel='stylesheet' href='assets/css/messages.css'>
+    <link rel='stylesheet' href='assets/css/mainControls.css'>
     <link
         href='http://fonts.googleapis.com/css?family=Roboto:400,100italic,100,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed:400,300,400italic,700italic,700,300italic'
         rel='stylesheet' type='text/css' />
@@ -49,12 +50,14 @@
         Score<br>
         <input type="text" name="score" id="score" value="100">
     </div>
-    <div class="stopWatch grow">Time</div>
+    <div class="stopWatch grow">
+        <div></div>Time
+    </div>
     <div class="cursor"></div>
     <div class="voice"></div>
 
     <header>
-        <div class="userProfilePic"></div>
+        <div class="userProfilePic">J</div>
         <div class="logo"></div>
         <div class="glasses"></div>
         <div class='eyes-container'>
@@ -349,6 +352,13 @@
 </div>
 
 <sidebar>
+    <h24></h24>
+    <div class="pieceBtn btnClass remove"></div>
+    <div class="hintBtn btnClass hint"></div>
+    <div class="goBtn btnClass go"></div>
+    <div class="solveBtn btnClass solve"></div>
+    <div class="quitBtn quit"></div>
+
     <div class="navBtn grow quit">
         <h11>Quit (press Q)</h11>
     </div>
@@ -361,9 +371,10 @@
     <div class="navBtn grow solve">
         <h11>Solve (press S)</h11>
     </div>
-    <div class="navBtn grow remove">
+    <!-- <div class="navBtn grow remove">
         <h11>Piece (press P)</h11>
-    </div>
+    </div> -->
+
 </sidebar>
 
 <script src='assets/js/main.js'></script>

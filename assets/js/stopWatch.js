@@ -66,4 +66,6 @@ $("#tryAgainBtn").click(function () {
 
 $("#clicksSubmitResultsBtn").click(function () {
     $("#submitResultsBtn").click();
-})		
+})
+
+

@@ -158,6 +158,19 @@ h23 {
   font-weight: 400 !important;
 }
 
+h24 {
+  position: absolute;
+  top: 145px;
+  text-align: center;
+  font-size: 14px;
+  right: 84px;
+  width: 220px;
+  height: 26px;
+  color: #9096A2;
+  letter-spacing: .02em;
+  font-weight: 400 !important;
+}
+
 .logo {
   position: fixed;
   top: 14px;
@@ -171,12 +184,18 @@ h23 {
 
 .userProfilePic {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
   right: 40px;
   top: 8px;
   width: 24px;
   height: 24px;
   border-radius: 100%;
-  background-color: #DDDFE2;
+  background-color: #DA8F8F;
 }
 
 input:focus {
@@ -209,6 +228,7 @@ header {
   text-align: center;
   font-size: 24px;
   font-weight: 700;
+  text-align: center;
   background-color: rgba(255, 255, 255, 0);
   color: #435273;
   font-family: 'Roboto Condensed', sans-serif;
@@ -219,12 +239,48 @@ header {
   left: 50%;
   margin: 190px 0px 0px -272px;
   width: 35px;
-  height: 62px;
+  height: 64px;
+  background-image: url(../images/watch/stopWatch.svg);
   background-repeat: no-repeat;
   background-position: center bottom;
   z-index: 4;
-  opacity: .75;
-  filter: alpha(opacity=75);
+  text-align: center;
+}
+
+.stopWatch div {
+  position: absolute;
+  bottom: 1px;
+  width: 35px;
+  height: 35px;
+  background-image: url(../images/watch/watchHand.svg);
+  background-repeat: no-repeat;
+  background-size: 18%;
+  background-position: center center;
+}
+
+.stopWatchGo div {
+  -webkit-animation: tictoc 60s steps(60) infinite;
+  -moz-animation: tictoc 60s steps(60) infinite;
+  animation: tictoc 60s steps(60) infinite;
+}
+
+@-moz-keyframes tictoc {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes tictoc {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes tictoc {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 .puzzleLayerContainer {
@@ -469,7 +525,7 @@ header {
 .cursor {
   width: 16px;
   height: 16px;
-  background-color: #d6447c;
+  background-color: rgba(214, 68, 124, 0.8);
   border-radius: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -486,22 +542,6 @@ header {
 
 .link-grow {
   transform: scale(2);
-}
-
-sidebar {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  top: 40px;
-  right: 0;
-  height: 480px;
-  width: 140px;
-}
-
-.navBtn {
-  height: 40px;
-  width: 130px;
 }
 
 .hintBox {

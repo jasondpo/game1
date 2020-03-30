@@ -9,7 +9,7 @@
   overflow: hidden;
 }
 
-.leftArrow, .rightArrow, .downArrow {
+.downArrow {
   border: solid;
   border-width: 0 2px 2px 0;
   display: inline-block;
@@ -19,16 +19,6 @@
 .downArrow {
   transform: rotate(45deg) scale(0.7) translate(0px, -3px);
   -webkit-transform: rotate(45deg) scale(0.7) translate(0px, -3px);
-}
-
-.rightArrow {
-  transform: rotate(-45deg) scale(0.7) translate(0px, -3px);
-  -webkit-transform: rotate(-45deg) scale(0.7) translate(0px, -3px);
-}
-
-.leftArrow {
-  transform: rotate(135deg) scale(0.77) translate(0px, 2px);
-  -webkit-transform: rotate(135deg) scale(0.77) translate(0px, 2px);
 }
 
 .leaderboard:hover {

@@ -90,12 +90,29 @@ function showHint() {
 //////////// controls for clue END
 
 
+/// Hover over main controls
+$(".remove").mouseover(function () {
+    $("h24").html("Remove Piece (Press P)");
+})
+$(".hint").mouseover(function () {
+    $("h24").html("Clue (Hold C)");
+})
+$(".solve").mouseover(function () {
+    $("h24").html("Solve (Press S)");
+})
+$(".go").mouseover(function () {
+    $("h24").html("Play (Hold G)");
+})
+$(".quit").mouseover(function () {
+    $("h24").html("Quit (Press Q)");
+})
+
+$(".remove, .quit, .hint, .solve, .go").mouseout(function () {
+    $("h24").html("");
+})
 
 
-
-
-
-//////////// Regular Click Navigation STARTS //////////// 
+//////////// Main Onscreen Navigation STARTS //////////// 
 
 $(".remove").click(function () {
     theNumber();

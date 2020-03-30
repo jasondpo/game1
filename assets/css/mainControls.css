@@ -1,0 +1,90 @@
+sidebar{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top:40px;
+    right: 0;
+    height: 480px;
+    width: 140px;
+}
+
+.btnClass{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 30%;
+    z-index: 2;
+    border-radius: 100%; 
+    width: 70px;
+    height: 70px;
+    background-color: #ccd4df;
+    transition: background-color .10s linear; 
+    transition: transform .10s; 
+}
+.pieceBtn{
+    background-image: url(../images/controller/puzzleIcon.svg);
+    background-size: 35%;
+    left:-90px;
+    top:190px;
+    background-color: #94E2C0;
+}
+.pieceBtn:hover{
+    background-color: rgb(127, 196, 166);
+    transform: scale(1.05);
+}
+.solveBtn{
+    background-image: url(../images/controller/solveIcon.svg);
+    left:-90px;
+    top:310px;
+}
+.solveBtn:hover{
+    background-color: #8666E1 !important;
+    transform: scale(1.05); 
+}
+.goBtn{
+    background-image: url(../images/controller/playIcon.svg);
+    background-position: 28px center;
+    left:-170px;
+    top:250px;
+}
+.goBtn:hover{
+    background-color: #E9798F !important;
+    transform: scale(1.05); 
+}
+.hintBtn{
+    background-image: url(../images/controller/clueIcon.svg);
+    background-size: 37%;
+    background-position: center 27px;
+    left:-10px;
+    top:250px;
+}
+.hintBtn:hover{
+    background-color: #FAB690 !important;
+    transform: scale(1.05); 
+}
+.quitBtn{
+    background-image: url(../images/controller/stopIcon.svg);
+    background-repeat: no-repeat;
+    background-position: center 15px;
+    background-size: 50%;
+    position: absolute;
+    box-sizing: border-box;
+    left:30px;
+    top:390px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #ccd4df;
+    transition: background-color .10s linear;
+    transition: transform .10s;   
+}
+.quitBtn:hover{
+    background-color: #f30 !important;
+    transform: scale(1.05);  
+}
+.navBtn{
+    height: 40px;
+    width: 130px;
+    display: none;
+}
