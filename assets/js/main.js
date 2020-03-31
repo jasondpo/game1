@@ -25,7 +25,7 @@ loadLayers()
 
 
 function featuredImage() {
-    $(".imageContainer").css('background-image', 'url(assets/images/faces/idris_elba.png)')
+    $(".imageContainer").css('background-image', 'url(assets/images/faces/testVideo.png)')
 }
 featuredImage();
 

@@ -5,7 +5,7 @@ html, body{
     font-size: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
-    cursor: none;
+    // cursor: none;
     overflow: hidden;
 }
 
@@ -86,7 +86,8 @@ h17{ // Category in Leaderboard
     color:#333;
     font-size: 13px;
     transition: background-color .15s linear;
-    border-bottom: 1px solid rgb(223, 223, 223); 
+    border-bottom: 1px solid rgb(223, 223, 223);
+    cursor: pointer; 
     z-index: 2;
 }
 h17:hover{
@@ -482,19 +483,19 @@ header{
   }
 
 /// CURSOR 
-.cursor{
-    width: 16px;
-    height: 16px;
-    background-color: rgba(214, 68, 124, .8);
-    border-radius: 50%;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    pointer-events: none;
-    transition: transform 0.3s ease;
-    transform-origin: 100% 100%;
-    z-index: 9;
-    display: none;
-}
+// .cursor{
+//     width: 16px;
+//     height: 16px;
+//     background-color: rgba(214, 68, 124, .8);
+//     border-radius: 50%;
+//     position: absolute;
+//     transform: translate(-50%,-50%);
+//     pointer-events: none;
+//     transition: transform 0.3s ease;
+//     transform-origin: 100% 100%;
+//     z-index: 9;
+//     display: none;
+// }
 .cursorHide{
     display: none !important;  
 }
