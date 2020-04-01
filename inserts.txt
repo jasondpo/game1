@@ -1,0 +1,11 @@
+
+INSERT INTO `gameJCCO`(`id`, `userid`, `username`, `image`, `score`, `time`, `shoutout`) VALUES ('1','1','Anthony','01.jpg', '82','4:37','General beer evangelist. Lifelong coffee trailblazer. Certified twitter advocate. Travel practitioner.')
+
+
+INSERT INTO `gameJCCO`(`id`, `userid`, `username`, `image`, `score`, `time`, `shoutout`) VALUES ('2','2','Glenna','02.jpg', '81','4:30','Award-winning internet junkie. Introvert. Zombieaholic. Devoted food fanatic. Beer buff. Tv fanatic.')
+
+
+INSERT INTO `gameJCCO`(`id`, `userid`, `username`, `image`, `score`, `time`, `shoutout`) VALUES ('3','3','John','03.jpg', '80','4:30','Coffee expert. Incurable twitteraholic. Amateur music buff. Pop culture nerd. Web practitioner.')
+
+
+INSERT INTO `gameJCCO`(`id`, `userid`, `username`, `image`, `score`, `time`, `shoutout`) VALUES ('4','4','Linda','05.jpg', '78','4:22','Food evangelist. Amateur thinker. Coffee guru. Certified alcohol buff. Introvert. Total reader.Explorer.')

@@ -21,7 +21,7 @@ function openDB(){
 function createTables(){
     $db=openDB();
 
-    $sql ="DROP TABLE IF EXISTS user, game";
+    $sql ="DROP TABLE IF EXISTS user, gamePeople, gameVintage, gameCartoons, gameJCCO";
     $result = $db->query($sql);
       If ( $result != true){
           die("<br>Unable to drop tables<br>");
@@ -53,13 +53,14 @@ function createTables(){
     ."id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,"
     ."userid VARCHAR(50) NOT NULL,"
     ."username VARCHAR(50) NOT NULL,"
+    ."image VARCHAR(50) NOT NULL,"
     ."score TEXT NOT NULL,"
     ."time VARCHAR(100) NOT NULL,"
-    ."shoutout VARCHAR(50) NOT NULL);";
+    ."shoutout TEXT NOT NULL);";
 
     $result=$db->query($sql);
     if($result != true){
-        die("<br>Unable to gamePeople Tasks table<br>");
+        die("<br>Unable to create gamePeople Tasks table<br>");
     }
     else{
         ECHO "<br>GamePeople table created<br>";                
@@ -70,13 +71,14 @@ function createTables(){
     ."id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,"
     ."userid VARCHAR(50) NOT NULL,"
     ."username VARCHAR(50) NOT NULL,"
+    ."image VARCHAR(50) NOT NULL,"
     ."score TEXT NOT NULL,"
     ."time VARCHAR(100) NOT NULL,"
-    ."shoutout VARCHAR(50) NOT NULL);";
+    ."shoutout TEXT NOT NULL);";
 
     $result=$db->query($sql);
     if($result != true){
-        die("<br>Unable to gameVintage Tasks table<br>");
+        die("<br>Unable to create gameVintage Tasks table<br>");
     }
     else{
         ECHO "<br>GameVintage table created<br>";                
@@ -87,16 +89,35 @@ function createTables(){
     ."id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,"
     ."userid VARCHAR(50) NOT NULL,"
     ."username VARCHAR(50) NOT NULL,"
+    ."image VARCHAR(50) NOT NULL,"
     ."score TEXT NOT NULL,"
     ."time VARCHAR(100) NOT NULL,"
-    ."shoutout VARCHAR(50) NOT NULL);";
+    ."shoutout TEXT NOT NULL);";
 
     $result=$db->query($sql);
     if($result != true){
-        die("<br>Unable to gameCartoons Tasks table<br>");
+        die("<br>Unable to create gameCartoons Tasks table<br>");
     }
     else{
         ECHO "<br>GameCartoons table created<br>";                
+    }
+
+    // 'JCCO Game' TABLE
+    $sql="CREATE TABLE gameJCCO ("
+    ."id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,"
+    ."userid VARCHAR(50) NOT NULL,"
+    ."username VARCHAR(50) NOT NULL,"
+    ."image VARCHAR(50) NOT NULL,"
+    ."score TEXT NOT NULL,"
+    ."time VARCHAR(100) NOT NULL,"
+    ."shoutout TEXT NOT NULL);";
+
+    $result=$db->query($sql);
+    if($result != true){
+        die("<br>Unable to create gameJCCO Tasks table<br>");
+    }
+    else{
+        ECHO "<br>GameJCCO table created<br>";                
     }
 
 }
