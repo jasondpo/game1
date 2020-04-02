@@ -8,4 +8,4 @@ INSERT INTO `gameJCCO`(`id`, `userid`, `username`, `image`, `score`, `time`, `sh
 INSERT INTO `gameJCCO`(`id`, `userid`, `username`, `image`, `score`, `time`, `shoutout`) VALUES ('3','3','John','03.jpg', '80','4:30','Coffee expert. Incurable twitteraholic. Amateur music buff. Pop culture nerd. Web practitioner.')
 
 
-INSERT INTO `gameJCCO`(`id`, `userid`, `username`, `image`, `score`, `time`, `shoutout`) VALUES ('4','4','Linda','05.jpg', '78','4:22','Food evangelist. Amateur thinker. Coffee guru. Certified alcohol buff. Introvert. Total reader.Explorer.')
+INSERT INTO `gameJCCO`(`id`, `userid`, `username`, `image`, `score`, `time`, `shoutout`) VALUES ('4','4','Linda','04.jpg', '78','4:22','Food evangelist. Amateur thinker. Coffee guru. Certified alcohol buff. Introvert. Total reader.Explorer.')

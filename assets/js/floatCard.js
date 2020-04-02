@@ -1,7 +1,7 @@
 $(function () {
 
     // On mouseover: Move 'card-floating-socialIcons' into position and show proper arrow
-    $(".playerContainer").on("mouseover", function (e) {
+    $(document).on("mouseover", ".playerContainer", function (e) {
         var pic = $(this).children(".playerProfile").css('background-image');
         var name = $(this).children('.playerStatsContainer').find('h13').html();
         var desc = $(this).children('.playerStatsContainer').find('h20').html();
@@ -28,7 +28,7 @@ $(function () {
     });
 
     // On mouseout: Hide card and arrows after 300ms
-    $(".playerContainer").on("mouseout", function () {
+    $(document).on("mouseout", ".playerContainer", function () {
         $('.card-floating-socialIcons, .card-floating-socialIcons-arrowDown, .card-floating-socialIcons-arrowUp').hide();
     });
 });
@@ -36,10 +36,10 @@ $(function () {
 /// Hide Cards when click oustide of playerContainer or hover over h17
 
 $("h17").click(function () {
-    if ($(this).find('span').html() == "Best Score")
-        $(this).find('span').html('Best Time')
+    if ($(this).find('h25').html() == "Best Score")
+        $(this).find('h25').html('Best Time')
     else
-        $(this).find('span').html('Best Score');
+        $(this).find('h25').html('Best Score');
 })
 
 $("h17").click(function () {
@@ -56,3 +56,5 @@ $('h17').mouseover(function () {
 $('.playerContainer').click(function (event) {
     event.stopPropagation();
 });
+
+

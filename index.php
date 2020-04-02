@@ -16,7 +16,7 @@
     <link rel='stylesheet' href='assets/css/mainControls.css'>
     <link
         href='http://fonts.googleapis.com/css?family=Roboto:400,100italic,100,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed:400,300,400italic,700italic,700,300italic'
-        rel='stylesheet' type='text/css' />
+        rel='stylesheet' type='text/css' />        
 </head>
 
 <body>
@@ -71,15 +71,18 @@
 
     <div class="leaderboard">
 
-        <div class="topPlayersSpacer">
+        <div class="topPlayersSpacer" onclick="selectFilter()">
             <h17>
-                <h23></h23> <span>Best Score</span>&nbsp;&nbsp;<i class="downArrow"></i>
+                <h23></h23> <h25>Best Score</h25>&nbsp;&nbsp;<i class="downArrow"></i>
             </h17>
             <div class="categoryFadeBox"></div>
             <h16>TOP PLAYERS</h16>
         </div>
 
-        <div class="playerContainer">
+        <div class="playerList"></div>
+        
+
+        <!-- <div class="playerContainer">
             <div class="playerProfile" style="background-image: url(assets/images/player/01.jpg)"></div>
             <div class="playerRating">1</div>
             <div class="playerStatsContainer">
@@ -308,7 +311,7 @@
                 <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
                 <h20>Well, if you don't shop at Walmart, where do you buy your hotdog flavored potato chips?</h20>
             </div>
-        </div>
+        </div> -->
 
     </div>
 
@@ -322,7 +325,7 @@
     <div class="dot3 dotStyle" onmouseover="message('dot3')"></div>
     <div class="dot4 dotStyle" onmouseover="message('dot4')"></div>
     <div class="dot5 dotStyle" onmouseover="message('dot5')"></div>
-</body>
+
 
 <div class="categoriesContainer">
     <ul id="btmNav">
@@ -337,11 +340,11 @@
             <div class="arrow-down"></div>
             <h21 class="btnCategory">Vintage</h21>
         </li>
-        <li class="navBtnGroup">
+        <li class="navBtnGroup" onclick="selectTopic('cartoons')">
             <div class="arrow-down"></div>
             <h21 class="btnCategory">Cartoons</h21>
         </li>
-        <li class="navBtnGroup">
+        <li class="navBtnGroup" onclick="selectTopic('jcco')">
             <div class="arrow-down"></div>
             <h21 class="btnCategory">JCCO</h21>
         </li>
@@ -376,7 +379,8 @@
     </div> -->
 
 </sidebar>
-
+</body>
+ 
 <script src='assets/js/main.js'></script>
 <script src='assets/js/eyes.js'></script>
 <script src='assets/js/messages.js'></script>
