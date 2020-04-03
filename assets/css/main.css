@@ -172,6 +172,72 @@ h24 {
   font-weight: 400 !important;
 }
 
+h26 {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px;
+  height: 16px;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: .02em;
+  color: #9096A2;
+  text-align: center;
+}
+
+h26 span {
+  color: #6a6e77;
+}
+
+h27 {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px;
+  height: 16px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: .02em;
+  text-align: center;
+}
+
+h28 {
+  position: absolute;
+  top: 276px;
+  left: 50%;
+  margin-left: -274px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+h28 span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #435273;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h29 {
+  position: absolute;
+  top: 348px;
+  left: 50%;
+  margin-left: -274px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+h29 span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #435273;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 .colorRibbon {
   display: block;
   width: 100%;
@@ -181,7 +247,7 @@ h24 {
 
 .logo {
   position: fixed;
-  top: 14px;
+  top: 15px;
   left: 24px;
   width: 90px;
   height: 18px;
@@ -199,7 +265,7 @@ h24 {
   font-size: 14px;
   font-weight: 500;
   right: 40px;
-  top: 8px;
+  top: 9px;
   width: 24px;
   height: 24px;
   border-radius: 100%;
@@ -226,8 +292,9 @@ header {
 
 .scoreContainer {
   position: absolute;
+  text-align: center;
   left: 50%;
-  margin: 120px 0px 0px -270px;
+  margin: 120px 0px 0px -274px;
 }
 
 #score {
@@ -245,7 +312,7 @@ header {
 .stopWatch {
   position: fixed;
   left: 50%;
-  margin: 190px 0px 0px -272px;
+  margin: 188px 0px 0px -272px;
   width: 35px;
   height: 64px;
   background-image: url(../images/watch/stopWatch.svg);

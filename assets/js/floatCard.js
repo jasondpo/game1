@@ -36,10 +36,10 @@ $(function () {
 /// Hide Cards when click oustide of playerContainer or hover over h17
 
 $("h17").click(function () {
-    if ($(this).find('h25').html() == "Best Score")
-        $(this).find('h25').html('Best Time')
+    if ($(this).find('h25').html() == "Best Scores")
+        $(this).find('h25').html('Best Times')
     else
-        $(this).find('h25').html('Best Score');
+        $(this).find('h25').html('Best Scores');
 })
 
 $("h17").click(function () {

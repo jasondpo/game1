@@ -56,6 +56,9 @@
     <div class="cursor"></div>
     <div class="voice"></div>
 
+    <h28>Game<br><span>1|5</span></h28>
+    <h29>W - L<br><span>2-2</span></h29>
+
     <header>
         <div class="colorRibbon"></div>
         <div class="userProfilePic">J</div>
@@ -74,7 +77,7 @@
 
         <div class="topPlayersSpacer" onclick="selectFilter()">
             <h17>
-                <h23></h23> <h25>Best Score</h25>&nbsp;&nbsp;<i class="downArrow"></i>
+                <h23></h23> <h25>Best Scores</h25>&nbsp;&nbsp;<i class="downArrow"></i>
             </h17>
             <div class="categoryFadeBox"></div>
             <h16>TOP PLAYERS</h16>
@@ -96,34 +99,7 @@
     <div class="dot5 dotStyle" onmouseover="message('dot5')"></div>
 
 
-<div class="categoriesContainer">
-    <ul id="btmNav">
-        <li>
-            <i class="leftArrow"></i>
-        </li>
-        <li class="navBtnGroup" onclick="selectTopic('people')">
-            <div class="arrow-down"></div>
-            <h21 class="btnCategory">People</h21>
-        </li>
-        <li class="navBtnGroup" onclick="selectTopic('vintage')">
-            <div class="arrow-down"></div>
-            <h21 class="btnCategory">Vintage</h21>
-        </li>
-        <li class="navBtnGroup" onclick="selectTopic('cartoons')">
-            <div class="arrow-down"></div>
-            <h21 class="btnCategory">Cartoons</h21>
-        </li>
-        <li class="navBtnGroup" onclick="selectTopic('jcco')">
-            <div class="arrow-down"></div>
-            <h21 class="btnCategory">JCCO</h21>
-        </li>
-        <li>
-            <i class="rightArrow"></i>
-        </li>
-    </ul>
-</div>
-
-<sidebar>
+    <sidebar>
     <h24></h24>
     <div class="pieceBtn btnClass remove"></div>
     <div class="hintBtn btnClass hint"></div>
@@ -146,8 +122,37 @@
     <!-- <div class="navBtn grow remove">
         <h11>Piece (press P)</h11>
     </div> -->
-
 </sidebar>
+
+<h27>Player, choose a category</h27>
+<h26>Includes:<span></span></h26>
+<div class="categoriesContainer">
+    <ul id="btmNav">
+        <li>
+            <i class="leftArrow"></i>
+        </li>
+        <li class="navBtnGroup" onmouseover="showDesc('people')" onclick="selectTopic('people')">
+            <div class="arrow-down"></div>
+            <h21 class="btnCategory">People</h21>
+        </li>
+        <li class="navBtnGroup vintage" onmouseover="showDesc('vintage')"  onclick="selectTopic('vintage')">
+            <div class="arrow-down"></div>
+            <h21 class="btnCategory">Vintage</h21>
+        </li>
+        <li class="navBtnGroup cartoons" onmouseover="showDesc('cartoons')" onclick="selectTopic('cartoons')">
+            <div class="arrow-down"></div>
+            <h21 class="btnCategory">Cartoons</h21>
+        </li>
+        <li class="navBtnGroup jcco" onmouseover="showDesc('jcco')" onclick="selectTopic('jcco')">
+            <div class="arrow-down"></div>
+            <h21 class="btnCategory">JCCO</h21>
+        </li>
+        <li>
+            <i class="rightArrow"></i>
+        </li>
+    </ul>
+</div>
+
 </body>
  
 <script src='assets/js/main.js'></script>
