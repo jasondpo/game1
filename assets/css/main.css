@@ -172,6 +172,13 @@ h24 {
   font-weight: 400 !important;
 }
 
+.colorRibbon {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, #73D2F6, #08C 22%, #7FC400 36%, #FFD583 48%, #FFB21E 63%, #FF4D4D 76%, #503873);
+}
+
 .logo {
   position: fixed;
   top: 14px;
@@ -411,7 +418,7 @@ header {
 }
 
 .dotActive {
-  background-color: #77AFFA;
+  background-color: #00ADEF;
   transform: scale(1.25);
   font-size: 12px;
   transition: transform .25s;
@@ -425,7 +432,7 @@ header {
   content: "You";
   font-weight: bold;
   display: block;
-  color: #77AFFA;
+  color: #00ADEF;
   padding-left: 18px;
 }
 

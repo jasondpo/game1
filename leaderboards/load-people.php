@@ -1,4 +1,3 @@
-
 <?php include "../functions.php";
 
 $theFilter = $_POST['filter'];
@@ -7,11 +6,11 @@ $i=1;
 $db = openDB();   
 
 if($theFilter==null){
-    $query = "SELECT id, userid, username, image, score, time, shoutout FROM gameJCCO ORDER BY score DESC LIMIT 20";
+    $query = "SELECT id, userid, username, image, score, time, shoutout FROM gamePeople ORDER BY score DESC LIMIT 20";
 }if($theFilter=="score"){
-    $query = "SELECT id, userid, username, image, score, time, shoutout FROM gameJCCO ORDER BY ".$theFilter." DESC LIMIT 20";
+    $query = "SELECT id, userid, username, image, score, time, shoutout FROM gamePeople ORDER BY ".$theFilter." DESC LIMIT 20";
 }if($theFilter=="time"){
-    $query = "SELECT id, userid, username, image, score, time, shoutout FROM gameJCCO ORDER BY ".$theFilter." ASC LIMIT 20";
+    $query = "SELECT id, userid, username, image, score, time, shoutout FROM gamePeople ORDER BY ".$theFilter." ASC LIMIT 20";
 }
 $ds = $db->query($query);
 $cnt = $ds->rowCount();

@@ -57,6 +57,7 @@
     <div class="voice"></div>
 
     <header>
+        <div class="colorRibbon"></div>
         <div class="userProfilePic">J</div>
         <div class="logo"></div>
         <div class="glasses"></div>
@@ -80,238 +81,6 @@
         </div>
 
         <div class="playerList"></div>
-        
-
-        <!-- <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/01.jpg)"></div>
-            <div class="playerRating">1</div>
-            <div class="playerStatsContainer">
-                <h13>Anthony Pittman</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>General beer evangelist. Lifelong coffee trailblazer. Certified twitter advocate. Travel
-                    practitioner.</h20>
-            </div>
-
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/02.jpg)"></div>
-            <div class="playerRating">2</div>
-            <div class="playerStatsContainer">
-                <h13>Glenna McConnell</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Award-winning internet junkie. Introvert. Zombieaholic. Devoted food fanatic. Beer buff. Tv
-                    fanatic.</h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/03.jpg)"></div>
-            <div class="playerRating">3</div>
-            <div class="playerStatsContainer">
-                <h13>John Hova</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Coffee expert. Incurable twitteraholic. Amateur music buff. Pop culture nerd. Web practitioner.
-                </h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/04.jpg)"></div>
-            <div class="playerRating">4</div>
-            <div class="playerStatsContainer">
-                <h13>Linda Anthony</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Food evangelist. Amateur thinker. Coffee guru. Certified alcohol buff. Introvert. Total reader.
-                    Explorer.</h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/05.jpg)"></div>
-            <div class="playerRating">5</div>
-            <div class="playerStatsContainer">
-                <h13>Gertrude Swartz</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Unapologetic writer. Music expert. General analyst. Amateur social media scholar. Creator. </h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/06.jpg)"></div>
-            <div class="playerRating">6</div>
-            <div class="playerStatsContainer">
-                <h13>Willie Crary</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Governments never learn. Only people learn</h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/07.jpg)"></div>
-            <div class="playerRating">7</div>
-            <div class="playerStatsContainer">
-                <h13>Chloe Austin</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>I will consider running a half-marathon the first time I see someone smiling while doing it.</h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/08.jpg)"></div>
-            <div class="playerRating">8</div>
-            <div class="playerStatsContainer">
-                <h13>Ronald Harris</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Proud tv guru. Evil music scholar. Food trailblazer. Freelance communicator. Alcohol fanatic.</h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/09.jpg)"></div>
-            <div class="playerRating">9</div>
-            <div class="playerStatsContainer">
-                <h13>Princess Pettit</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Friend of animals everywhere. Freelance twitter nerd. Pop culture fan. Amateur gamer.</h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/10.jpg)"></div>
-            <div class="playerRating">10</div>
-            <div class="playerStatsContainer">
-                <h13>Mark Cox</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Problem solver. Communicator. Unable to type with boxing gloves on.</h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/11.jpg)"></div>
-            <div class="playerRating">11</div>
-            <div class="playerStatsContainer">
-                <h13>Anthony Pittman</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>General beer evangelist. Lifelong coffee trailblazer. Certified twitter advocate. Travel
-                    practitioner.</h20>
-            </div>
-
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/12.jpg)"></div>
-            <div class="playerRating">12</div>
-            <div class="playerStatsContainer">
-                <h13>Gary McConnell</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Award-winning internet junkie. Introvert. Zombieaholic. Devoted food fanatic. Beer buff. Tv
-                    fanatic.</h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/13.jpg)"></div>
-            <div class="playerRating">13</div>
-            <div class="playerStatsContainer">
-                <h13>David Drake</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Coffee expert. Incurable twitteraholic. Amateur music buff. Pop culture nerd. Web practitioner.
-                </h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/14.jpg)"></div>
-            <div class="playerRating">14</div>
-            <div class="playerStatsContainer">
-                <h13>Anthony Adam</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Food evangelist. Amateur thinker. Coffee guru. Certified alcohol buff. Introvert. Total reader.
-                    Explorer.</h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/15.jpg)"></div>
-            <div class="playerRating">15</div>
-            <div class="playerStatsContainer">
-                <h13>Steven Swartz</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Unapologetic writer. Music expert. General analyst. Amateur social media scholar. Creator. </h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/16.jpg)"></div>
-            <div class="playerRating">16</div>
-            <div class="playerStatsContainer">
-                <h13>Christie Crary</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Governments never learn. Only people learn</h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/17.jpg)"></div>
-            <div class="playerRating">17</div>
-            <div class="playerStatsContainer">
-                <h13>Amanda Austin</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>I will consider running a half-marathon the first time I see someone smiling while doing it.</h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/18.jpg)"></div>
-            <div class="playerRating">18</div>
-            <div class="playerStatsContainer">
-                <h13>Reney Harris</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Proud tv guru. Evil music scholar. Food trailblazer. Freelance communicator. Alcohol fanatic.</h20>
-            </div>
-        </div>
-
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/19.jpg)"></div>
-            <div class="playerRating">19</div>
-            <div class="playerStatsContainer">
-                <h13>Bryon Grant</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>I am known for a life spent in the struggle for freedom.</h20>
-            </div>
-        </div>
-
-        <div class="playerContainer">
-            <div class="playerProfile" style="background-image: url(assets/images/player/20.jpg)"></div>
-            <div class="playerRating">20</div>
-            <div class="playerStatsContainer">
-                <h13>James Cave</h13>
-                <h14>Score&nbsp;&nbsp;82</h14>
-                <h15>Time&nbsp;&nbsp;&nbsp;4m 32s </h15>
-                <h20>Well, if you don't shop at Walmart, where do you buy your hotdog flavored potato chips?</h20>
-            </div>
-        </div> -->
 
     </div>
 
@@ -332,11 +101,11 @@
         <li>
             <i class="leftArrow"></i>
         </li>
-        <li class="navBtnGroup">
+        <li class="navBtnGroup" onclick="selectTopic('people')">
             <div class="arrow-down"></div>
             <h21 class="btnCategory">People</h21>
         </li>
-        <li class="navBtnGroup">
+        <li class="navBtnGroup" onclick="selectTopic('vintage')">
             <div class="arrow-down"></div>
             <h21 class="btnCategory">Vintage</h21>
         </li>

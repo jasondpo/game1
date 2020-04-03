@@ -7,11 +7,11 @@ $i=1;
 $db = openDB();   
 
 if($theFilter==null){
-    $query = "SELECT id, userid, username, image, score, time, shoutout FROM gameCartoons ORDER BY score DESC";
+    $query = "SELECT id, userid, username, image, score, time, shoutout FROM gameCartoons ORDER BY score DESC LIMIT 20";
 }if($theFilter=="score"){
-    $query = "SELECT id, userid, username, image, score, time, shoutout FROM gameCartoons ORDER BY ".$theFilter." DESC";
+    $query = "SELECT id, userid, username, image, score, time, shoutout FROM gameCartoons ORDER BY ".$theFilter." DESC LIMIT 20";
 }if($theFilter=="time"){
-    $query = "SELECT id, userid, username, image, score, time, shoutout FROM gameCartoons ORDER BY ".$theFilter." ASC";
+    $query = "SELECT id, userid, username, image, score, time, shoutout FROM gameCartoons ORDER BY ".$theFilter." ASC LIMIT 20";
 }
 $ds = $db->query($query);
 $cnt = $ds->rowCount();
