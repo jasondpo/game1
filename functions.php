@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php session_start();
 
 function openDB(){
     //$servername = "xxxxx.xxxxx.com"; live host
@@ -121,6 +120,101 @@ function createTables(){
     }
 
 }
+/////////////// Register users and validate logon process ///////////////
 
+function registerUser(){ 
+    if(isset($_POST["registerBtn"])){
+	// User clicked register button      
+        if ($_POST["registerpassword"] != $_POST["confirmpassword"]){
+            //echo "<script>alert('Passwords do not match');</script>";
+			echo"<script>window.open('register.php','_self');</script>";
+            exit();
+        }else{
+	        echo "<script>alert('password match');</script>";
 
+        }
+        
+	// Both passwords match, see if user name already in use      
+        $db = openDB();               
+        $query = "SELECT password FROM user WHERE username= '".$_POST['registername']."' ;";
+        $ds = $db->query($query);
+        $cnt = $ds->rowCount();
+        if ($cnt == 1){	            
+        	echo "<script>alert('User name already registered, use different name');</script>";
+			echo"<script>window.open('register.php','_self');</script>";
+            exit();              
+        }else{
+            echo "<script>alert('Name is not there');</script>";
+        }
+
+                    
+        //Add to user table   
+        
+		$sql ="INSERT INTO `user` (`username`, `password`)"." VALUES " 
+                ."( '"
+                .$_POST['registername']."','"
+                .$_POST['registerpassword']."');"; 
+        $result = $db->query($sql);
+        if ( $result != true){
+        	echo "<script>alert('Registry failed');</script>";
+        }else{
+			echo "<script>alert('Registry successful');</script>";
+				$last_id = $db->lastInsertId();
+				session_start();
+				$_SESSION["granted"] = "open";
+				$_SESSION["userName"] = $_POST['registername'];
+				$_SESSION["userId"] = $last_id;
+			echo"<script>window.open('main.php','_self');</script>"; 
+            exit();
+        }
+
+    }
+  } 
+
+//////// Returning user  ///////////////////////////
+if(isset($_POST["logIn"])){
+
+    $db = openDB();               
+    $query = "SELECT password, id FROM user WHERE username='".$_POST['userName']."' ;";
+    $ds = $db->query($query);
+    $cnt = $ds->rowCount();		
+    if ($cnt == 1 ){
+        
+        $row = $ds->fetch(); // Get data row			
+                    
+        if($row["password"]==$_POST['userPassword']){
+            session_start();
+            $_SESSION["granted"] = "open";
+            $_SESSION["userName"] = $_POST['userName'];
+            $_SESSION["userId"] = $row["id"];
+            echo"<script>window.open('main.php','_self');</script>"; 
+            exit();
+            }else{
+                echo"<script>alert('User name or password is incorrect.')</script>";
+                echo"<script>window.open('index.php','_self');</script>"; //index.php is correct 
+                exit();
+            }
+        }else{
+            echo"<script>alert('User name or password is incorrect.')</script>";
+            echo"<script>window.open('index.php','_self');</script>"; //index.php is correct 
+            exit();
+        }	
+}
+
+/////////////////////////// Display Players in Messenger///////////////////////////
+function displayPlayersMessenger(){
+    $db = openDB();               
+    $query = "SELECT id, username FROM user ORDER BY username ASC";
+    $ds = $db->query($query);
+    $cnt = $ds->rowCount();
+    if ($cnt == 0){
+        echo '';
+        return; // No contacts 
+    }             
+    foreach ($ds as $row){
+        if($row["username"]!=$_SESSION["userName"]){
+        echo '<option value="'.$row["username"].'">'.$row["username"].'</option>';
+        }   
+    }
+}
 ?>

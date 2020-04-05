@@ -10,11 +10,6 @@ var dot2 = [
     "",
 ]
 
-// function message(this_instance) {
-//     if (this_instance == "dot1") {
-//         //
-//     }
-// }
 
 
 $(".dot1").mouseover(function () {

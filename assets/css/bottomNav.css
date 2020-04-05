@@ -1,4 +1,30 @@
-
+.pinkArrowDown{
+  position: absolute;
+  left:50%;
+  bottom:90px;
+  z-index: 10;
+  background-image: url(../images/misc/pink-arrow-down.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 30px;
+  height: 40px;
+}
+.pinkArrowDownActive{
+  transform: translatey(0px);
+  transition: border .15s linear;	
+  animation: bounce .5s ease-in-out infinite ;  
+}
+@keyframes bounce {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-14px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
 .categoriesContainer{
   position: fixed;
   box-sizing: border-box;
