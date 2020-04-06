@@ -53,6 +53,7 @@ header{
     box-sizing: border-box;;
     padding: 14px;
     background-color: white;
+    display: none;
     box-shadow:
     0 0px 0.2px -5px rgba(0, 0, 0, 0.02),
     0 0.5px 0.6px -5px rgba(0, 0, 0, 0.028),
@@ -88,11 +89,14 @@ header{
 }
 .toggleReceiveMessage{
     margin:6px 0px 16px 0px;
-    box-sizing: border-box;
-    padding: 8px;
     background-color: #F9FAFB;
     border-radius: 4px;
     overflow-x: hidden;
     height: 200px;
     display: none;
+}
+.singleMessage{
+    box-sizing: border-box;
+    padding: 10px 8px;
+    border-bottom: 1px solid #DDD;
 }

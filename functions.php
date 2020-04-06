@@ -20,7 +20,7 @@ function openDB(){
 function createTables(){
     $db=openDB();
 
-    $sql ="DROP TABLE IF EXISTS user, gamePeople, gameVintage, gameCartoons, gameJCCO";
+    $sql ="DROP TABLE IF EXISTS user, gamePeople, gameVintage, gameCartoons, gameJCCO, gameMessenger";
     $result = $db->query($sql);
       If ( $result != true){
           die("<br>Unable to drop tables<br>");
@@ -119,6 +119,22 @@ function createTables(){
         ECHO "<br>GameJCCO table created<br>";                
     }
 
+     // 'Messenger Game' TABLE
+     $sql="CREATE TABLE gameMessenger ("
+     ."id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,"
+     ."touser VARCHAR(50) NOT NULL,"
+     ."fromuser VARCHAR(50) NOT NULL,"
+     ."timestamp VARCHAR(50) NOT NULL,"
+     ."message TEXT NOT NULL);";
+ 
+     $result=$db->query($sql);
+     if($result != true){
+         die("<br>Unable to create gameMessenger Tasks table<br>");
+     }
+     else{
+         ECHO "<br>GameMessenger table created<br>";                
+     }
+
 }
 /////////////// Register users and validate logon process ///////////////
 
@@ -201,7 +217,7 @@ if(isset($_POST["logIn"])){
         }	
 }
 
-/////////////////////////// Display Players in Messenger///////////////////////////
+/////////////////////////// Display Players in Messenger Dropdown List///////////////////////////
 function displayPlayersMessenger(){
     $db = openDB();               
     $query = "SELECT id, username FROM user ORDER BY username ASC";
@@ -217,4 +233,42 @@ function displayPlayersMessenger(){
         }   
     }
 }
+
+/////////////////////////// Display Mail IndBox ///////////////////////////
+
+function displayPlayerMail(){
+    $db = openDB();               
+    $query = "SELECT touser, fromuser, timestamp, message FROM gameMessenger WHERE touser='".$_SESSION["userName"]."'ORDER BY timestamp DESC;";
+    $ds = $db->query($query);
+    $cnt = $ds->rowCount();
+    if ($cnt == 0){
+        echo 'Inbox is empty.';
+        return; // No contacts 
+    }             
+    foreach ($ds as $row){
+        echo '<div class="singleMessage"><h33>'.$row["timestamp"].'</h33><h32>Form:<b> '.$row["fromuser"].'</b></h32><h31>'.$row["message"].'</h31></div>';
+    }
+}
+
+/////////////////////////// Submit New Message ///////////////////////////
+if ($_POST["userMessageBox"]!=null){
+    date_default_timezone_set("America/New_York");
+    $db = openDB();
+        $sql ="INSERT INTO gameMessenger (touser, fromuser, timestamp, message)"
+                  ." VALUES " 
+                ."( '"
+                .$_POST['selectPlayer']."','"
+                .$_SESSION["userName"]."','"
+                .date('D, M d; G:i')."','"
+                .$_POST['userMessageBox']."');";
+
+        $result = $db->query($sql);
+        if ( $result != true){
+            ECHO "Unable to save message";
+        }
+        else{
+            ECHO '<div class="successOverlay">Message saved</div>';
+        }
+}
+
 ?>

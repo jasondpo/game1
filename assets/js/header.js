@@ -1,3 +1,15 @@
+// Toggle logout dialogue box
+$('.userProfilePic').click(function () {
+    $('.logoutMessageBox').toggle();
+})
+$('html').click(function () {
+    $(".logoutMessageBox").hide();
+});
+$('.logoutMessageBox, .userProfilePic').click(function (event) {
+    event.stopPropagation();
+});
+
+
 // Toggle send and receive messages box.
 $("h30").click(function () {
     if ($(this).find('span').html() == "Message") {
@@ -11,3 +23,19 @@ $("h30").click(function () {
         $('.toggleReceiveMessage').hide();
     }
 });
+
+//// Send Messages to functions page ////
+
+$('#sendMessageForm').on('submit', function (e) {
+    e.preventDefault();
+    $.ajax({
+        type: 'post',
+        url: 'functions.php',
+        data: $('#sendMessageForm').serialize(),
+        success: function () {
+            // alert('form was submitted');
+        }
+    });
+});
+
+

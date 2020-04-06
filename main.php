@@ -1,12 +1,10 @@
 <?php include 'includes/header.php';?>
 <?php 
-if(isset($_POST['destroySession'])){  /// Place destroy session inside header.php. If that doesn't work, place on top of php code like this example.  
+if(isset($_POST['destroySession'])){  
     unset($_SESSION['granted']);
     echo"<script>window.open('index.php','_self');</script>";
 }
-
 if($_SESSION["granted"]=="open"){
-
 }else{
     echo"<script>alert('You must sign in first');</script>";
     echo"<script>window.open('index.php','_self');</script>";
@@ -30,17 +28,25 @@ exit();
     <div class="logoutMessageBox">
         <div class="userMessageBoxArrowUp"></div>
         <h30><span>Message</span> <i class="downArrow"></i></h30>
-        <div class="toggleReceiveMessage"></div>
+        <div class="toggleReceiveMessage">
+            <?php displayPlayerMail(); ?>
+        </div>
         <div class="toggleSendMessage">
-            <select id="cars">
-                <option value="">Select Player</option>
-                <?php displayPlayersMessenger(); ?>
-            </select>
-            <textarea name="" id="userMessageBox" cols="30" rows="10" placeholder="Type a message."></textarea>
-            <input type="post" value="Send">
+
+            <form id="sendMessageForm" method="POST">
+                <select name="selectPlayer">
+                    <option value="">Select Player</option>
+                    <?php displayPlayersMessenger(); ?>
+                </select>
+                <textarea name="userMessageBox" id="userMessageBox" cols="30" rows="10" placeholder="What's on your mind, <?php echo $_SESSION["userName"]; ?>?"></textarea>
+                <input type="submit" name="sendMessageBtn" value="Send">
+            </form>   
+
         </div>    
         <hr style="background-color: #DDD; height: 1px; border: 0;">
-        <h30 class="logout">Logout</h30>
+        <form action="main.php" method="POST">
+            <input type="submit" name="destroySession" value="Logout">
+        </form>
     </div>
 
     <div class="messageBubbleContainer">
