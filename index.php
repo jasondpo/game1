@@ -3,9 +3,10 @@
 <body>
 <style>
 body, html{
-	background-position: center 40px;
+    background-image: url(assets/images/bkg/puzzleMan.png);
+	background-position: center 76px;
+	/* background-size:20%; */
 	background-repeat: no-repeat;
-	background-size: cover;
 	height: 100%;
 	cursor:auto !important;
 }
@@ -22,13 +23,13 @@ body, html{
 			<div>
 				<form method="post" autocomplete='off' action="index.php">
 												
-					<input type="text" id="userName" name="userName" value="Username" onblur="if(this.value==''){ this.value='Username';}" onfocus="if(this.value=='Username'){this.value=''}"/>
+					<input type="text" id="userName" class="inputStyle"name="userName" value="Username" onblur="if(this.value==''){ this.value='Username';}" onfocus="if(this.value=='Username'){this.value=''}"/>
 					<br>
 					<br>
-					<input type="text" id="password" name="userPassword" value="Password" onblur="if(this.value==''){ this.value='Password'; this.type='text'}" onfocus="if(this.value=='Password'){ this.value=''; this.type='password';}"/>
+					<input type="text" id="password" class="inputStyle" name="userPassword" value="Password" onblur="if(this.value==''){ this.value='Password'; this.type='text'}" onfocus="if(this.value=='Password'){ this.value=''; this.type='password';}"/>
 					<br>
 					<br>
-					<input type="submit" class="loginBtn" name="logIn" value="Log in"> &nbsp;&nbsp; <button type="button" class="signupBtn"><a href="register.php">Sign up</a></button> 
+					<input type="submit" class="loginBtn btnStyle" name="logIn" value="Log in"> &nbsp;&nbsp; <button type="button" class="signupBtn btnStyle"><a href="register.php">Sign up</a></button> 
 								
 				</form> 
 			</div> 	
@@ -36,7 +37,7 @@ body, html{
 
 	</div>
 
-
+<h34>&copy; 2004-<?php echo date('Y');?> JasonD Portfolio </h34>
 
 
 </body>		

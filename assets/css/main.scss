@@ -253,6 +253,17 @@ h33{ // messenger 'timestamp'
     font-size: 12px;
     line-height: 1.4em;
 }
+h34{ // Created by Jason Dobbins
+    position: absolute;
+    letter-spacing: .03em; 
+    bottom:10px;
+    display: block;
+    width: 100%;
+    height: 24px;
+    text-align: center;
+    color: #8a95a8;
+    font-size: 12px;
+}
 input, select, textarea:focus {
     outline:0;
 }
@@ -674,26 +685,37 @@ input, select, textarea:focus {
 .loginContainer{
 	position:absolute;
 	display:flex;
-	Top:50%;
+	top:400px;
 	left:50%;
-	margin:-80px 0px 0px -150px;
+	margin-left:-150px;
 	width:300px;
 	height:140px;
 	// background-color:white;
 	border-radius:6px;
-	justify-content: center;
+	justify-content: center;    
 }
-#userName, #password{
+.inputStyle{
     width:250px;
-    height: 30px;
+    height: 34px;
     border-radius: 15px;
     border:none;
+    background-color: #dfe6ee;
+    color: #8a95a8;
+    font-size: 14px;
+    letter-spacing: .04em;
     box-sizing: border-box;
-    padding: 0px 6px;
+    padding: 0px 12px;
 }
-.loginBtn, .signupBtn{
+.loginBtn, .signupBtn, .registerBtn, .backBtn{
 	float:right;
 }
-.loginBtn{
+.loginBtn, .backBtn{
 	margin-left:10px;
+}
+.btnStyle{
+    border:none !important;
+    padding: 8px 14px 8px 14px;
+    text-align: center !important;
+    text-decoration: none !important;
+    border-radius: 4px;
 }
