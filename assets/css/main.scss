@@ -626,7 +626,6 @@ input, select, textarea:focus {
     background-color: rgba(0,0,0,.85);
 }
 
-
 /// Solve box
 #solveField{
     margin: 4px 0px 0px 60px;
@@ -669,3 +668,32 @@ input, select, textarea:focus {
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: #BBB;
   }
+
+
+/// Index page
+.loginContainer{
+	position:absolute;
+	display:flex;
+	Top:50%;
+	left:50%;
+	margin:-80px 0px 0px -150px;
+	width:300px;
+	height:140px;
+	// background-color:white;
+	border-radius:6px;
+	justify-content: center;
+}
+#userName, #password{
+    width:250px;
+    height: 30px;
+    border-radius: 15px;
+    border:none;
+    box-sizing: border-box;
+    padding: 0px 6px;
+}
+.loginBtn, .signupBtn{
+	float:right;
+}
+.loginBtn{
+	margin-left:10px;
+}

@@ -714,3 +714,32 @@ input, select, textarea:focus {
   /* Internet Explorer 10-11 */
   color: #BBB;
 }
+
+.loginContainer {
+  position: absolute;
+  display: flex;
+  Top: 50%;
+  left: 50%;
+  margin: -80px 0px 0px -150px;
+  width: 300px;
+  height: 140px;
+  border-radius: 6px;
+  justify-content: center;
+}
+
+#userName, #password {
+  width: 250px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  box-sizing: border-box;
+  padding: 0px 6px;
+}
+
+.loginBtn, .signupBtn {
+  float: right;
+}
+
+.loginBtn {
+  margin-left: 10px;
+}
