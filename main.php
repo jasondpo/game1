@@ -39,13 +39,13 @@ exit();
                     <?php displayPlayersMessenger(); ?>
                 </select>
                 <textarea name="userMessageBox" id="userMessageBox" cols="30" rows="10" placeholder="What's on your mind, <?php echo $_SESSION["userName"]; ?>?"></textarea>
-                <input type="submit" name="sendMessageBtn" value="Send">
+                <input type="submit" class="sendMessageBtn btnStyle" name="sendMessageBtn" value="Send">
             </form>   
 
         </div>    
-        <hr style="background-color: #DDD; height: 1px; border: 0;">
+        <hr style="background-color: #DDD; height: 1px; border: 0;margin:18px 0px 12px 0px">
         <form action="main.php" method="POST">
-            <input type="submit" name="destroySession" value="Logout">
+            <input type="submit"  class="destroySession btnStyle"  name="destroySession" value="Logout">
         </form>
     </div>
 
