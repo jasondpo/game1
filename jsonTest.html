@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <title>json test</title>
+</head>
+
+<body>
+
+    <p id="app2"></p>
+    <br>
+    <br>
+    <p id="app"></p>
+    <br>
+    <br>
+    <button>Click Me</button>
+
+
+    <script>
+        var x = "";
+
+        $("button").click(function () {
+            $("#app").html("");
+            var ran = Math.floor(Math.random() * 1000);
+
+
+            $.getJSON("assets/js/game.json#" + ran, function (obj) {
+
+                $("#app2").html(obj[0].game1.image);
+                $.each(obj, function (i, data) {
+                    $("#app").append(data.game1.answers[i] + "<br>");
+                });
+            });
+
+        })
+    </script>
+
+</body>
+
+</html>
