@@ -20,19 +20,18 @@
 
 
     <script>
-        var x = "";
-
         $("button").click(function () {
             $("#app").html("");
             var ran = Math.floor(Math.random() * 1000);
 
-
             $.getJSON("assets/js/game.json#" + ran, function (obj) {
 
-                $("#app2").html(obj[0].game1.image);
-                $.each(obj, function (i, data) {
-                    $("#app").append(data.game1.answers[i] + "<br>");
-                });
+                $("#app2").html(obj[3].game1.image);
+             
+                for(var i = 0; i < obj[3].game1.answers.length; i++)
+                    {
+                         $("#app").append(obj[3].game1.answers[i] + "<br>");
+                    }
             });
 
         })
