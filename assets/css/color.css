@@ -1,0 +1,8 @@
+:root{
+    --main-bkg-color:#F0F2F5;
+    --pink:#d6447c; /*pupil*/
+    --pink-transparent:rgba(214, 68, 124, .8); /*cursor*/
+    --blue-large-numbers:#435273; /*Top Players, player profile float, Number of games, Wins and Loses, Message/Indbox toggle, score, rightTopFace, rightBottomFace*/
+    --dark-grey:#222; /* player profile name, Sidebar controls*/
+    --light-blue:#9096A2; /*player profile score, player profile time, Leaderboard topic, Main control instructions, Categories description */
+}

@@ -6,35 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <title>json test</title>
+
+    <style>
+        #picBox {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            left: 50%;
+            margin: 200px 0px 0px -150px;
+            background-size: cover;
+            background-position: center top;
+        }
+    </style>
 </head>
 
 <body>
-
-    <p id="app2"></p>
+    <div id="picBox"></div>
+    <p id="answers"></p>
     <br>
     <br>
     <p id="app"></p>
     <br>
     <br>
-    <button>Click Me</button>
-
+    <button id="start" onclick="startgame();">Start</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <input type="text" id="myAns">
+    <button id="submit">submit</button>
 
     <script>
-        $("button").click(function () {
+
+        // Start game
+
+        var x = 0;
+
+        function startgame() {
+            x++
             $("#app").html("");
-            var ran = Math.floor(Math.random() * 1000);
 
-            $.getJSON("assets/js/game.json#" + ran, function (obj) {
+            $.getJSON("assets/js/game.json", function (obj) {
+                gameLength = Object.keys(obj[0]).length;
+                var gl = parseInt(gameLength)
+                if (x > gl) {
+                    alert('Show stats')
+                } else {
+                    var gamePic = obj[0]["game" + x].image
+                    $("#picBox").css('background-image', gamePic);
+                    $("#answers").html(obj[0]["game" + x].answers);
+                }
+            })
+        }
 
-                $("#app2").html(obj[3].game1.image);
-             
-                for(var i = 0; i < obj[3].game1.answers.length; i++)
-                    {
-                         $("#app").append(obj[3].game1.answers[i] + "<br>");
-                    }
-            });
 
+        // Check answers
+        $('#submit').click(function () {
+            var str = $('#answers').html();
+            var myAns = $('#myAns').val();
+            var n = str.includes(myAns);
+            if (n == true) {
+                startgame();
+            } else {
+                alert('false')
+            }
         })
+
+
     </script>
 
 </body>

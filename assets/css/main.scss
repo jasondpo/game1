@@ -1,5 +1,5 @@
 html, body{
-    background-color: #F0F2F5;
+    background-color: var(--main-bkg-color);
     margin:0px;
     padding: 0px;
     font-size: 14px;
@@ -17,7 +17,7 @@ h11{ // Sidebar controls
     transition: all .25s linear;
 }
 h11:hover{
-    color:#222;
+    color:var(--dark-grey);
     font-size: 16px;
 }
 h12{  // pieces left for clue
@@ -36,7 +36,7 @@ h13{ // player profile name
     margin: 13px 0px 4px 0px;
     font-size: 14px;
     font-weight: 400;
-    color: #222;
+    color: var(--dark-grey);
     white-space: nowrap;
     overflow:hidden !important;
     text-overflow: ellipsis;
@@ -50,7 +50,7 @@ h14{ // player profile score
     margin-bottom: 5px;
     font-weight: 400; 
     letter-spacing: .02em;
-    color: #9096A2;
+    color: var(--light-blue);
     pointer-events: none;
 }
 h15{ // player profile time
@@ -61,17 +61,17 @@ h15{ // player profile time
     margin-bottom: 5px;
     font-weight: 400; 
     letter-spacing: .02em;
-    color: #9096A2;
+    color: var(--light-blue);
     pointer-events: none;
 }
-h16{
+h16{ //Top Players
     position: absolute;
     bottom: 4px;
     left:13px;
     display: block;
     font-size: 15px;
     font-weight: 500;
-    color: #435273;
+    color: var(--blue-large-numbers);
 }
 h17{ // Category in Leaderboard
     top:40px;
@@ -101,7 +101,7 @@ h18{ /// player profile float
     margin: 4px 0px 4px 120px;
     font-size: 16px;
     font-weight: 500;
-    color: #435273;
+    color: var(--blue-large-numbers);
     white-space: nowrap;
     overflow:hidden !important;
     text-overflow: ellipsis;
@@ -140,7 +140,7 @@ h22{  // Speech bubble
     letter-spacing: .02em;
 }
 h23{ //Leaderboard topic
-    color: #9096A2;
+    color: var(--light-blue);
     font-weight: 400 !important;
 }
 h24{ //Main control instructions
@@ -151,7 +151,7 @@ h24{ //Main control instructions
     right:84px;
     width: 220px;
     height: 26px;
-    color: #9096A2;
+    color: var(--light-blue);
     letter-spacing: .02em;
     font-weight: 400 !important;
 }
@@ -169,7 +169,7 @@ h26{  // Categories description
     font-weight: 400;
     font-size: 13px;
     letter-spacing: .02em;
-    color: #9096A2;
+    color: var(--light-blue);
     text-align: center;
 }
 h26 span{ 
@@ -185,7 +185,7 @@ h27{  // Choose a Category
     height: 16px;
     text-indent: 34px;
     font-weight: 500;
-    color:rgb(214, 68, 124);
+    color:var(--pink);
     font-size: 18px;
     letter-spacing: .02em;
     text-align: center;
@@ -202,7 +202,7 @@ h28{ // Number of games
 h28 span{
     font-size: 24px;
     font-weight: 700;
-    color: #435273;
+    color: var(--blue-large-numbers);
     font-family: 'Roboto Condensed', sans-serif;
 }
 h29{ //Wins and Loses
@@ -217,15 +217,15 @@ h29{ //Wins and Loses
 h29 span{
     font-size: 24px;
     font-weight: 700;
-    color: #435273;
+    color: var(--blue-large-numbers);
     font-family: 'Roboto Condensed', sans-serif;
 }
-h30{  // Logout
+h30{  // Message/Indbox toggle
     display: block;
     padding-top: 6px;
     width: 97%;
     text-align: right;
-    color: #435273;
+    color: var(--blue-large-numbers);
     font-size: 14px;
     letter-spacing: .01em;
 }
@@ -273,7 +273,7 @@ input, select, textarea:focus {
 .overlayCurtain{
     z-index: 8;
     position: absolute;
-    background-color: #F0F2F5;
+    background-color: var(--main-bkg-color);
     background-image: url(../images/bkg/lightbulb.png);
     background-repeat: no-repeat;
     background-position: calc(50% - 85px) calc(50% - 45px);
@@ -296,7 +296,7 @@ input, select, textarea:focus {
     font-weight: 700;
     text-align: center;
     background-color: rgba(255, 255, 255, 0);
-    color: #435273;
+    color: var(--blue-large-numbers);
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -419,7 +419,7 @@ input, select, textarea:focus {
 .rightTopFace:hover::after { 
     content: "Mark, \A the genius";
     white-space: pre;
-    color: #435273;
+    color: var(--blue-large-numbers);
     font-weight: 500;
     font-size: 12px;
     display: block;
@@ -445,7 +445,7 @@ input, select, textarea:focus {
 .rightBottomFace:hover::after { 
     content: "Kenye, \A the dummy";
     white-space: pre;
-    color: #435273;
+    color: var(--blue-large-numbers);
     font-weight: 500;
     font-size: 12px;
     display: block;
@@ -555,7 +555,7 @@ input, select, textarea:focus {
     width: 9px;
     box-sizing: border-box;
     height: 9px;
-    background-color: #435273;
+    background-color: var(--blue-large-numbers);
     border-radius: 50%;
     transition: background-color .25s linear;
     content: " ";
@@ -564,14 +564,14 @@ input, select, textarea:focus {
     background-color: #77AFFA;
   }
   .red:after{
-    background-color: rgb(214, 68, 124);
+    background-color: var(--pink);
   }
 
 /// CURSOR 
 .cursor{
     width: 16px;
     height: 16px;
-    background-color: rgba(214, 68, 124, .8);
+    background-color: var(--pink-transparent);
     border-radius: 50%;
     position: absolute;
     transform: translate(-50%,-50%);
