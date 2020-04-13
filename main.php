@@ -118,7 +118,9 @@ exit();
     <div class="dot5 dotStyle" onmouseover="message('dot5')"></div>
 
 
-    <sidebar>
+<sidebar>
+
+    <div class="controlBtnContainer"></div>
     <h24></h24>
     <div class="pieceBtn btnClass remove"></div>
     <div class="hintBtn btnClass hint"></div>
@@ -138,9 +140,6 @@ exit();
     <div class="navBtn grow solve">
         <h11>Solve (press S)</h11>
     </div>
-    <!-- <div class="navBtn grow remove">
-        <h11>Piece (press P)</h11>
-    </div> -->
 </sidebar>
 
 <div class="pinkArrowDown pinkArrowDownActive"></div>

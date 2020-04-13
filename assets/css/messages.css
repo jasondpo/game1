@@ -18,7 +18,7 @@
     padding: 9px 14px 0px 14px;
     box-sizing: border-box;
     width: auto;
-    background-color: #00ADEF;
+    background-color: var(--blue-bubble);
     /* border: 2px solid #F0F2F5; */
     border-radius: 16px;
     box-shadow:
@@ -38,5 +38,5 @@
     height: 0; 
     border-left: 14px solid transparent;
     border-right: 14px solid transparent;
-    border-top: 7px solid  #00ADEF;
+    border-top: 7px solid   var(--blue-bubble);
   }

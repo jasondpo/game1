@@ -33,7 +33,7 @@
   left:0px;
   bottom:0px;
   height: 34px;
-  background-color: #2F3640;
+  background-color: var(--dark-blue);
   border-top: 1px solid rgb(29, 33, 39);
 }
 #btmNav{
@@ -48,7 +48,7 @@
   cursor: pointer;
 }
 .btnCategory{
-    color: #8291A5;
+    color: var(--blue-btn-category);
 }
 .btnCategory:hover{
   text-decoration: underline;
@@ -71,7 +71,7 @@
     transition: border-top .15s linear;
   }
   .rightArrow, .leftArrow {
-    border: solid #8291A5; 
+    border: solid var(--blue-btn-category); 
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;

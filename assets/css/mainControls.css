@@ -7,6 +7,7 @@ sidebar{
     right: 0;
     height: 480px;
     width: 140px;
+    /* background-color: #f30; */
 }
 
 .btnClass{
@@ -18,7 +19,7 @@ sidebar{
     border-radius: 100%; 
     width: 70px;
     height: 70px;
-    background-color: #ccd4df;
+    background-color: var(--main-control-btns);
     transition: background-color .10s linear; 
     transition: transform .10s; 
 }
@@ -75,7 +76,7 @@ sidebar{
     width: 35px;
     height: 35px;
     border-radius: 100%;
-    background-color: #ccd4df;
+    background-color: var(--main-control-btns);
     transition: background-color .10s linear;
     transition: transform .10s;   
 }

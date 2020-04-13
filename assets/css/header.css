@@ -9,7 +9,7 @@ header{
     left:0;
     right: 0;
     height: 40px;
-    background-color: #2F3640;
+    background-color: var(--dark-blue);
     border-bottom: 1px solid rgb(29, 33, 39);
     z-index: 3;
 }
@@ -36,11 +36,7 @@ header{
     width: 24px;
     height: 24px;
     border-radius: 100%;
-    background-color: #DA8F8F;
-}
-.logout{  /* logout text */
-    color:rgb(214, 68, 124);
-    font-weight: 500;
+    background-color: var(--userProfilePic);
 }
 .logoutMessageBox{
     position: fixed;

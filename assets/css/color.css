@@ -2,7 +2,12 @@
     --main-bkg-color:#F0F2F5;
     --pink:#d6447c; /*pupil*/
     --pink-transparent:rgba(214, 68, 124, .8); /*cursor*/
-    --blue-large-numbers:#435273; /*Top Players, player profile float, Number of games, Wins and Loses, Message/Indbox toggle, score, rightTopFace, rightBottomFace*/
+    --blue-large-numbers:#435273; /*Top Players, player profile float, Number of games, Wins and Loses, Message/Indbox toggle, score, rightTopFace, rightBottomFace, Category in Leaderboard*/
     --dark-grey:#222; /* player profile name, Sidebar controls*/
     --light-blue:#9096A2; /*player profile score, player profile time, Leaderboard topic, Main control instructions, Categories description */
+    --dark-blue:#2F3640; /*Header, categoriesContainer */
+    --blue-bubble:#00ADEF; /* messageBubble, messageBubble-ArrowdDown */
+    --blue-btn-category: #8291A5; /* btnCategory*/
+    --main-control-btns:#ccd4df; /*btnClass, dotStyle*/
+    --userProfilePic: #DA8F8F /*userProfilePic*/
 }
