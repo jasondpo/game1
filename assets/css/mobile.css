@@ -5,9 +5,17 @@
     }
   }
 
+  @media screen and (max-width: 1100px) {
+    .scoreContainer, .stopWatch, .leaderboard, h28, h29, h26, h24 {
+        display: none !important;
+    }
+  }
 
   @media screen and (max-width: 1100px) {
-    .scoreContainer, .stopWatch, h28, h29 {
-        display: none;
+    sidebar {
+      top:550px;
+      right:auto;
+      left:50%;
+      margin-left: -120px;
     }
   }

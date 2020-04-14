@@ -1,13 +1,13 @@
 sidebar{
     position: fixed;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    top:40px;
-    right: 0;
-    height: 480px;
-    width: 140px;
-    /* background-color: #f30; */
+    top:200px;
+    right: 80px;
+    height: 250px;
+    width: 240px;
 }
 
 .btnClass{
@@ -26,8 +26,8 @@ sidebar{
 .pieceBtn{
     background-image: url(../images/controller/puzzleIcon.svg);
     background-size: 35%;
-    left:-90px;
-    top:190px;
+    right:80px;
+    top:10px;
     background-color: #94E2C0;
 }
 .pieceBtn:hover{
@@ -36,8 +36,8 @@ sidebar{
 }
 .solveBtn{
     background-image: url(../images/controller/solveIcon.svg);
-    left:-90px;
-    top:310px;
+    right:80px;
+    top:120px;
 }
 .solveBtn:hover{
     background-color: #8666E1 !important;
@@ -46,8 +46,8 @@ sidebar{
 .goBtn{
     background-image: url(../images/controller/playIcon.svg);
     background-position: 28px center;
-    left:-170px;
-    top:250px;
+    right:160px;
+    top:60px;
 }
 .goBtn:hover{
     background-color: #E9798F !important;
@@ -57,8 +57,8 @@ sidebar{
     background-image: url(../images/controller/clueIcon.svg);
     background-size: 37%;
     background-position: center 27px;
-    left:-10px;
-    top:250px;
+    right:0px;
+    top:60px;
 }
 .hintBtn:hover{
     background-color: #FAB690 !important;
@@ -71,8 +71,8 @@ sidebar{
     background-size: 50%;
     position: absolute;
     box-sizing: border-box;
-    left:30px;
-    top:390px;
+    right:0px;
+    top:210px;
     width: 35px;
     height: 35px;
     border-radius: 100%;

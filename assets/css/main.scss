@@ -145,10 +145,11 @@ h23{ //Leaderboard topic
 }
 h24{ //Main control instructions
     position: absolute;
-    top:145px;
+    top:-30px;
     text-align: center;
     font-size: 14px;
-    right:84px;
+    left:50%;
+    margin-left: -110px;
     width: 220px;
     height: 26px;
     color: var(--light-blue);
