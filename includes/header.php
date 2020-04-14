@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QUIZ•LOU</title>
+    <title>Quiz•Lou</title>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <link href='https://use.fontawesome.com/releases/v5.3.1/css/all.css' rel='stylesheet' type='text/css' />
     <link rel='stylesheet' href='assets/css/color.css'>

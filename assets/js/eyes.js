@@ -33,14 +33,14 @@ function blink() {
 ///// Eyes disappear when cursor is innactive
 
 let eyesActive = setTimeout(function () {
-    $('.eye, .glasses, .eyes-container, .cursor, .messageBubbleContainer ').fadeOut();
+    $('.eye, .glasses, .eyes-container, .cursor, .messageBubbleContainer, h26 ').fadeOut();
 }, 10000);
 
 $(window).mousemove(function (e) {
     clearTimeout(eyesActive);
-    $('.eye, .glasses, .eyes-container, .cursor, .messageBubbleContainer ').fadeIn();
+    $('.eye, .glasses, .eyes-container, .cursor, .messageBubbleContainer').fadeIn();
     eyesActive = setTimeout(function () {
-        $('.glasses, .eye, .eyes-container, .cursor, .messageBubbleContainer ').fadeOut();
+        $('.glasses, .eye, .eyes-container, .cursor, .messageBubbleContainer, h26 ').fadeOut();
     }, 10000);
 });
 

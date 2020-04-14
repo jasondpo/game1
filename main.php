@@ -64,7 +64,8 @@ exit();
         <i class="fas fa-bullhorn"></i>
         <h19></h19>
     </div>
-
+    <div class="cursor"></div>
+    <div class="voice"></div>
     <div class="overlayCurtain"></div>
     <div class="messageContainer"></div>
     <div class="hintBox"></div>
@@ -76,21 +77,20 @@ exit();
     </div>
     <div class="darkScreen"></div>
     <div class="overlay"></div>
-    <div class="scoreContainer">
-        Score<br>
-        <input type="text" name="score" id="score" value="100">
-    </div>
-    <div class="stopWatch grow">
-        <div></div>Time
-    </div>
-    <div class="cursor"></div>
-    <div class="voice"></div>
 
-    <h28>Game<br><span>1|5</span></h28>
-    <h29>W - L<br><span>2-2</span></h29>
+    <div class="statsColumn">
+        <div class="scoreContainer">
+            Score<br>
+            <input type="text" name="score" id="score" value="100">
+        </div>
+        <div class="stopWatch grow">
+            <div></div>Time
+        </div>
+        <h28>Game<br><span>1|5</span></h28>
+        <h29>W - L<br><span>2-2</span></h29>
+    </div>
 
     <section class="move-area"></section>
-
 
     <div class="leaderboard">
 
@@ -108,19 +108,21 @@ exit();
 
     <div class="puzzleLayerContainer"></div>
     <div class="imageContainer"></div>
-    <div class="rightTopFace"></div>
-    <div class="rightBottomFace"></div>
+    <div class="woodenBoard"></div>
 
-    <div class="dot1 dotStyle" onmouseover="message('dot1')"></div>
-    <div class="dot2 dotStyle" onmouseover="message('dot2')"></div>
-    <div class="dot3 dotStyle" onmouseover="message('dot3')"></div>
-    <div class="dot4 dotStyle" onmouseover="message('dot4')"></div>
-    <div class="dot5 dotStyle" onmouseover="message('dot5')"></div>
+    <div class="smartGaugeColumn">
+        <div class="rightTopFace"></div>
+        <div class="dot1 dotStyle" onmouseover="message('dot1')"></div>
+        <div class="dot2 dotStyle" onmouseover="message('dot2')"></div>
+        <div class="dot3 dotStyle" onmouseover="message('dot3')"></div>
+        <div class="dot4 dotStyle" onmouseover="message('dot4')"></div>
+        <div class="dot5 dotStyle" onmouseover="message('dot5')"></div>
+        <div class="rightBottomFace"></div>
+    </div>
 
 
-<sidebar>
+<div class="controlBtnContainer">
 
-    <div class="controlBtnContainer"></div>
     <h24></h24>
     <div class="pieceBtn btnClass remove"></div>
     <div class="hintBtn btnClass hint"></div>
@@ -140,7 +142,7 @@ exit();
     <div class="navBtn grow solve">
         <h11>Solve (press S)</h11>
     </div>
-</sidebar>
+</div>
 
 <div class="pinkArrowDown pinkArrowDownActive"></div>
 <h27><?php echo $_SESSION["userName"]; ?>, select a category.</h27>

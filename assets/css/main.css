@@ -5,7 +5,6 @@ html, body {
   font-size: 14px;
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
-  cursor: none;
   overflow: hidden;
 }
 
@@ -211,9 +210,9 @@ h27 {
 
 h28 {
   position: absolute;
-  top: 276px;
+  top: 160px;
   left: 50%;
-  margin-left: -274px;
+  margin-left: -20px;
   width: 40px;
   height: 40px;
   text-align: center;
@@ -228,9 +227,9 @@ h28 span {
 
 h29 {
   position: absolute;
-  top: 348px;
+  top: 240px;
   left: 50%;
-  margin-left: -274px;
+  margin-left: -20px;
   width: 40px;
   height: 40px;
   text-align: center;
@@ -313,15 +312,22 @@ input, select, textarea:focus {
   left: 220px;
 }
 
+.statsColumn {
+  position: absolute;
+  left: 50%;
+  margin: -230px 0px 0px -305px;
+  top: 50%;
+  width: 50px;
+  height: 280px;
+}
+
 .scoreContainer {
   position: absolute;
   text-align: center;
-  left: 50%;
-  margin: 120px 0px 0px -274px;
 }
 
 #score {
-  width: 40px;
+  width: 50px;
   border: none;
   text-align: center;
   font-size: 24px;
@@ -333,9 +339,10 @@ input, select, textarea:focus {
 }
 
 .stopWatch {
-  position: fixed;
+  position: absolute;
+  top: 70px;
   left: 50%;
-  margin: 188px 0px 0px -272px;
+  margin-left: -17px;
   width: 35px;
   height: 64px;
   background-image: url(../images/watch/stopWatch.svg);
@@ -384,13 +391,14 @@ input, select, textarea:focus {
 .puzzleLayerContainer {
   left: 50%;
   margin-left: -200px;
-  margin-top: 120px;
+  top: 50%;
+  margin-top: -200px;
   position: absolute;
   width: 400px;
   height: 400px;
   z-index: 3;
   border-radius: 8px;
-  box-shadow: 0 0.4px 0.8px rgba(0, 0, 0, 0.02), 0 1.1px 1.9px rgba(0, 0, 0, 0.028), 0 2px 3.5px rgba(0, 0, 0, 0.035), 0 3.6px 6.3px rgba(0, 0, 0, 0.042), 0 6.7px 11.7px rgba(0, 0, 0, 0.05), 0 16px 28px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0.1px 0.1px rgba(0, 0, 0, 0.059), 0 0.3px 0.3px rgba(0, 0, 0, 0.085), 0 0.5px 0.6px rgba(0, 0, 0, 0.105), 0 0.9px 1.1px rgba(0, 0, 0, 0.125), 0 1.7px 2.1px rgba(0, 0, 0, 0.151), 0 4px 5px rgba(0, 0, 0, 0.21);
   transform: translatey(0px);
   animation: float 8s ease-in-out infinite;
 }
@@ -405,18 +413,36 @@ input, select, textarea:focus {
 
 .imageContainer {
   left: 50%;
-  margin-top: 119px;
+  top: 50%;
+  margin-top: -201px;
   margin-left: -201px;
   position: absolute;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   box-sizing: border-box;
-  border: 1px solid #F9F9F9;
+  border: 1px solid #aa8c7e;
   width: 402px;
   height: 402px;
   border-radius: 8px;
   z-index: 2;
+  transform: translatey(0px);
+  transition: border .15s linear;
+  animation: float 8s ease-in-out infinite;
+}
+
+.woodenBoard {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  margin: -235px 0px 0px -235px;
+  width: 470px;
+  height: 470px;
+  background-image: url(../images/bkg/wood.jpg);
+  background-size: cover;
+  border-radius: 8px;
+  box-shadow: 0 0.1px 0.1px rgba(0, 0, 0, 0.059), 0 0.3px 0.3px rgba(0, 0, 0, 0.085), 0 0.5px 0.6px rgba(0, 0, 0, 0.105), 0 0.9px 1.1px rgba(0, 0, 0, 0.125), 0 1.7px 2.1px rgba(0, 0, 0, 0.151), 0 4px 5px rgba(0, 0, 0, 0.21);
   transform: translatey(0px);
   transition: border .15s linear;
   animation: float 8s ease-in-out infinite;
@@ -438,12 +464,20 @@ input, select, textarea:focus {
   animation: none 0s ease-in-out infinite;
 }
 
+.smartGaugeColumn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -205px 0px 0px 250px;
+  height: 410px;
+  width: 50px;
+  z-index: 0;
+}
+
 .rightTopFace {
   position: absolute;
-  margin-top: 120px;
-  margin-left: 240px;
   background-size: cover;
-  left: 50%;
+  top: 0;
   width: 46px;
   height: 46px;
   border-radius: 100%;
@@ -469,10 +503,8 @@ input, select, textarea:focus {
 
 .rightBottomFace {
   position: absolute;
-  margin-top: 470px;
-  margin-left: 240px;
   background-size: cover;
-  left: 50%;
+  bottom: 0px;
   width: 46px;
   height: 46px;
   border-radius: 100%;
@@ -501,6 +533,7 @@ input, select, textarea:focus {
   width: 11px;
   height: 11px;
   border-radius: 100%;
+  margin-left: -6px;
   z-index: 0;
   background-color: var(--main-control-btns);
   left: 50%;
@@ -527,28 +560,23 @@ input, select, textarea:focus {
 }
 
 .dot1 {
-  margin-top: 198px;
-  margin-left: 256px;
+  margin-top: 83px;
 }
 
 .dot2 {
-  margin-top: 256px;
-  margin-left: 256px;
+  margin-top: 141px;
 }
 
 .dot3 {
-  margin-top: 314px;
-  margin-left: 256px;
+  margin-top: 199px;
 }
 
 .dot4 {
-  margin-top: 370px;
-  margin-left: 256px;
+  margin-top: 257px;
 }
 
 .dot5 {
-  margin-top: 426px;
-  margin-left: 256px;
+  margin-top: 315px;
 }
 
 .move-area {
@@ -618,20 +646,6 @@ input, select, textarea:focus {
 
 .red:after {
   background-color: var(--pink);
-}
-
-.cursor {
-  width: 16px;
-  height: 16px;
-  background-color: var(--pink-transparent);
-  border-radius: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  transition: transform 0.3s ease;
-  transform-origin: 100% 100%;
-  z-index: 11;
-  display: none;
 }
 
 .cursorHide {
