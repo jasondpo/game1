@@ -17,7 +17,7 @@ function theNumber() {
 
 function loadLayers() {
     for (i = 0; i < myRandom.length; i++) {
-        layer += '<div style="background-image:url(assets/images/puzzle/pp' + myRandom[i] + '.png)" class="puzzleLayer" data-piece=' + myRandom[i] + '></div>';
+        layer += '<div style="background-image:url(assets/images/puzzle/pp' + myRandom[i] + '.png),url(assets/images/puzzle/pp' + myRandom[i] + 's.png)" class="puzzleLayer" data-piece=' + myRandom[i] + '></div>';
     }
     $(".puzzleLayerContainer").html(layer)
 }
@@ -25,7 +25,7 @@ loadLayers()
 
 
 function featuredImage() {
-    $(".imageContainer").css('background-image', 'url(assets/images/game/faces/michelle.jpg)')
+    $(".imageContainer").css('background-image', 'url(assets/images/game/faces/asheley.jpg)')
 }
 featuredImage();
 
