@@ -36,4 +36,8 @@
     @keyframes float {
    
     }
+    .overlayCurtain{
+      background-position: calc(50% + 30px) calc(50% - 45px);
+      left: 0px;
+    }
   }

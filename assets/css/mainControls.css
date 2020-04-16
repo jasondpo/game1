@@ -47,8 +47,8 @@
 .goBtn{
     background-image: url(../images/controller/playIcon.svg);
     background-position: 28px center;
-    right:160px;
-    top:60px;
+    right:162px;
+    top:64px;
 }
 .goBtn:hover{
     background-color: #E9798F !important;
@@ -59,7 +59,7 @@
     background-size: 37%;
     background-position: center 27px;
     right:0px;
-    top:60px;
+    top:64px;
 }
 .hintBtn:hover{
     background-color: #FAB690 !important;
