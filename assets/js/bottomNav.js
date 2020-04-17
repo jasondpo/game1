@@ -10,6 +10,7 @@ $(".navBtnGroup").click(function () {
 
 function dehighlight() {
     $(".btnCategory").each(function () {
+        $('.messageBubbleContainer').hide();
         $(this).removeClass("btnCategoryActive");
         $('.arrow-down').hide();
     })

@@ -45,7 +45,7 @@ exit();
         </div>    
         <hr style="background-color: #DDD; height: 1px; border: 0;margin:18px 0px 12px 0px">
         <form action="main.php" method="POST">
-            <input type="submit"  class="destroySession btnStyle"  name="destroySession" value="Logout">
+            <input type="submit"  class="destroySession btnStyle"  name="destroySession" id="LogoutBtn" value="Logout">
         </form>
     </div>
 

@@ -36,7 +36,7 @@ let eyesActive = setTimeout(function () {
     $('.eye, .glasses, .eyes-container, .cursor, .messageBubbleContainer, h26 ').fadeOut();
 }, 10000);
 
-$(window).mousemove(function (e) {
+$(".rightTopFace, .rightBottomFace, .stopWatch, .quitBtn, .dotActive").mouseover(function (e) {
     clearTimeout(eyesActive);
     $('.eye, .glasses, .eyes-container, .cursor, .messageBubbleContainer').fadeIn();
     eyesActive = setTimeout(function () {
@@ -81,3 +81,15 @@ $(".navBtn").mouseover(function () {
 $(".navBtn").mouseleave(function () {
     $(".eye").removeClass("red");
 });
+
+
+//// Computer Voice Sound Effects for eyes  ///////
+var audio1 = new Audio('assets/sound/computerVoice1.mp3');
+var audio2 = new Audio('assets/sound/computerVoice2.mp3');
+export function computerVoice(this_instance) {
+    if (this_instance == "voice1") {
+        audio1.play();
+    } else {
+        audio2.play();
+    }
+}

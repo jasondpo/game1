@@ -1,3 +1,5 @@
+import { stopWatch } from './stopWatch.js';
+import { computerVoice } from './eyes.js';
 
 var myRandom = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 var n;
@@ -32,7 +34,7 @@ featuredImage();
 
 ////////// Keyboard Controls START ////////// 
 
-// controls for piece, solve and quit
+// Controls for piece, solve and quit
 $(document).on("keydown", function (event) {
     if (event.which == 80) { //P
         theNumber();
@@ -66,7 +68,7 @@ $(document).keyup(function (e) {
 
 
 
-/////////// controls for clue START
+/////////// Controls for clue START
 $(document).on("keydown", function (event) {
     if (event.which == 67) { //C
         showHint();
@@ -105,6 +107,8 @@ $(".go").mouseover(function () {
 })
 $(".quit").mouseover(function () {
     $("h24").html("Quit (Press Q)");
+    computerVoice('voice1');
+    $('.messageBubble h22').html("Don't you dare quit on me!")
 })
 
 $(".remove, .quit, .hint, .solve, .go").mouseout(function () {
@@ -112,7 +116,7 @@ $(".remove, .quit, .hint, .solve, .go").mouseout(function () {
 })
 
 
-//////////// Main Onscreen Navigation STARTS //////////// 
+//////////// Regular Click Controls STARTS //////////// 
 
 $(".remove").click(function () {
     theNumber();
@@ -133,7 +137,7 @@ $(".hint").click(function () {
         cHint = false
     }
 })
-//////////// Regular Click Navigation ENDS //////////// 
+//////////// Regular Click Controls ENDS //////////// 
 
 
 var audio = new Audio('assets/sound/hit.mp3');
@@ -141,7 +145,7 @@ function chime() {
     audio.play();
 }
 
-/// Smart Dumb Meter Player
+/// Smart Dumb Meter Player and 'YOU LOSE' audio
 var audioLose = new Audio('assets/sound/youLose.mp3');
 function smartGauge() {
     resetSmartGauge();
@@ -162,6 +166,8 @@ function smartGauge() {
     } if (myRandom.length <= 5) {
         $(".dot5").addClass("dotActive");
         audioLose.play();
+        $(".stopWatch").removeClass('stopWatchGo div');
+        stopWatch(); // From stopWatch.js
     }
 
 }
@@ -172,7 +178,10 @@ function resetSmartGauge() {
     }
 }
 
-/// Smart Dumb Meter Faces
+///// Smart Dumb Meter Faces //////
+var sc;
+var dc;
+
 var smartCelebs = [
     'alexandria.jpg',
     'cornel.jpg',
@@ -190,10 +199,21 @@ var dumbCelebs = [
 ]
 
 function randomCelebs() {
-    sc = Math.floor((Math.random() * 5) + 1)
-    dc = Math.floor((Math.random() * 5) + 1)
-    $(".rightTopFace").css('background-image', 'url(assets/images/smart/' + smartCelebs[sc - 1] + ')')
-    $(".rightBottomFace").css('background-image', 'url(assets/images/dumb/' + dumbCelebs[dc - 1] + ')')
+    sc = Math.floor((Math.random() * 5) + 1);
+    dc = Math.floor((Math.random() * 5) + 1);
+    $(".rightTopFace").css('background-image', 'url(assets/images/smart/' + smartCelebs[sc - 1] + ')');
+    $(".rightBottomFace").css('background-image', 'url(assets/images/dumb/' + dumbCelebs[dc - 1] + ')');
 }
 randomCelebs();
 
+///// Smart Dumb Meter voice on rollover
+$('.rightTopFace, .rightBottomFace').mouseover(function () {
+    computerVoice('voice1');
+})
+$('.dotStyle').mouseover(function () {
+    var dotColor = $(this).css('background-color');
+    if (dotColor == "rgb(0, 173, 239)") {
+        computerVoice('voice2');
+        $('.eye, .glasses, .eyes-container, .cursor, .messageBubbleContainer').fadeIn();
+    };
+})

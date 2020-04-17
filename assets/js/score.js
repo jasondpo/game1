@@ -1,3 +1,4 @@
+import { startWatch } from './stopWatch.js';
 
 var totalScore = 100
 var beginScoring = false;
@@ -17,4 +18,5 @@ function tallyScore() {
 
 function startTimer() {
     $(".stopWatch").addClass('stopWatchGo div');
+    startWatch(); // Function from stopWatch.js
 }

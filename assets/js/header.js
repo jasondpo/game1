@@ -1,3 +1,6 @@
+import { computerVoice } from './eyes.js';
+
+
 // Toggle logout dialogue box
 $('.userProfilePic').click(function () {
     $('.logoutMessageBox').toggle();
@@ -8,6 +11,13 @@ $('html').click(function () {
 $('.logoutMessageBox, .userProfilePic').click(function (event) {
     event.stopPropagation();
 });
+
+//Logout Btn
+$("#LogoutBtn").mouseover(function(){
+    computerVoice('voice1');
+    $('.eye, .glasses, .eyes-container, .cursor, .messageBubbleContainer').fadeIn();
+    $('.messageBubble h22').html("Come back soon!")
+})
 
 
 // Toggle send and receive messages box.

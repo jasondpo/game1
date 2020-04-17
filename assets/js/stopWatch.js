@@ -1,71 +1,52 @@
-function stopTimer() {
-    clearInterval(mainTimer);
-    $('.logoTimerBox').css("background-image", "url(assets/images/greyLogo.png)");
-}
+import { computerVoice } from './eyes.js';
 
 ///////////	GET TIME ///////
 /* This is the start time and end time. The "diff" function calculates the difference*/
-function getTime() {
-    var currentTime = Math.round(new Date() / 1000); // time in seconds since 1970?
-    return currentTime;
+var startTime;
+var stopTime;
+var totalTime = "";
+var recordTime = true;
+
+
+export function startWatch() { // score.js calls this and begins ticking animation
+    startTime = Math.round(new Date() / 1000); // time in seconds since 1970?
+}
+
+export function stopWatch(this_instance) {  // main.js calls this after "You Lose"
+    if (this_instance == 'update') {
+        recordTime = false
+    } else {
+        recordTime = true
+    }
+    stopTime = Math.round(new Date() / 1000); // time in seconds since 1970? 
+    diff();
 }
 ///////////	CALCULATE TIME DIFFERENCE ///////
-function diff(start, end) {
-    var start = $("#startTime").val();
-    var end = $("#endTime").val();
+function diff() {
 
-    totalSeconds = end - start;
-
+    var totalSeconds = stopTime - startTime;
     var minutes = Math.floor(totalSeconds / 60);
     var seconds = totalSeconds - minutes * 60;
 
     totalTime = (minutes <= 9 ? '0' : '') + minutes + ":" + (seconds <= 9 ? '0' : '') + seconds + "s";
 
-    $("#diff").val(totalTime)
-
+    if (recordTime == true) {
+        alert(totalTime + " has been recorded.")
+        // $("#diff").val(totalTime)
+    }
 }
 
-/////// Seconds START ///////
-function getSeconds() {
-    var start = $("#startTime").val();
-    var end = $("#endTime").val();
-
-    startSec = start.substring(start.lastIndexOf(":"))
-    startSec = startSec.slice(1)
-
-    endSec = end.substring(end.lastIndexOf(":"))
-    endSec = endSec.slice(1)
-    // 		alert(end-startSec)	
-    theSeconds = startSec - endSec
-
-    var negative = theSeconds;
-    seconds = -negative > 0 ? -negative : negative;
-    // 		alert(seconds)
-    return seconds
-}
-/////// Seconds ENDS ///////
-
-
-
-//////////////////////////// Today's Date ///////////////////////////////////////////
-
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth() + 1; //January is 0!
-
-var yyyy = today.getFullYear().toString().substr(-2);
-
-todaysDate = mm + '/' + dd + '/' + yyyy;
-$(".date").html(todaysDate)
-
-///////////////////////////////////////////////////
-
-$("#tryAgainBtn").click(function () {
-    location.reload();
+$('.stopWatch').mouseover(function () {
+    stopWatch('update');
+    if (totalTime.length != 6) {
+        $('.messageBubble h22').html("Timer will start after first puzzle piece is removed")
+        computerVoice('voice1');
+    } else {
+        $('.messageBubble h22').html(totalTime + " and counting...")
+        computerVoice('voice2');
+    }
 })
 
-$("#clicksSubmitResultsBtn").click(function () {
-    $("#submitResultsBtn").click();
-})
+
 
 
