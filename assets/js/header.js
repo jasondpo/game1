@@ -1,4 +1,4 @@
-import { computerVoice } from './eyes.js';
+import { computerVoice, fadeInEyes } from './eyes.js';
 
 
 // Toggle logout dialogue box
@@ -15,7 +15,7 @@ $('.logoutMessageBox, .userProfilePic').click(function (event) {
 //Logout Btn
 $("#LogoutBtn").mouseover(function(){
     computerVoice('voice1');
-    $('.eye, .glasses, .eyes-container, .cursor, .messageBubbleContainer').fadeIn();
+    fadeInEyes();
     $('.messageBubble h22').html("Come back soon!")
 })
 

@@ -51,7 +51,7 @@ exit();
 
     <div class="messageBubbleContainer">
         <div class="messageBubble">
-            <h22>The most well known cartoon character in the world</h22>
+            <h22></h22>
         </div>
         <div class="messageBubble-ArrowdDown"></div>
     </div>

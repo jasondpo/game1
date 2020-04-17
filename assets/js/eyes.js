@@ -36,14 +36,23 @@ let eyesActive = setTimeout(function () {
     $('.eye, .glasses, .eyes-container, .cursor, .messageBubbleContainer, h26 ').fadeOut();
 }, 10000);
 
-$(".rightTopFace, .rightBottomFace, .stopWatch, .quitBtn, .dotActive").mouseover(function (e) {
+$(".rightTopFace, .rightBottomFace, .stopWatch, .quitBtn, .dotActive, #LogoutBtn").mouseover(function (e) {
     clearTimeout(eyesActive);
-    $('.eye, .glasses, .eyes-container, .cursor, .messageBubbleContainer').fadeIn();
-    eyesActive = setTimeout(function () {
-        $('.glasses, .eye, .eyes-container, .cursor, .messageBubbleContainer, h26 ').fadeOut();
-    }, 10000);
+    fadeInEyes();
+    fadeOutEyes();
 });
 
+export function fadeInEyes(){
+     $('.eye, .glasses, .eyes-container, .cursor, .messageBubbleContainer').fadeIn();  
+}
+export function fadeOutEyes(){
+    eyesActive = setTimeout(function () {
+        $('.glasses, .eye, .eyes-container, .cursor, .messageBubbleContainer, h26 ').fadeOut();
+    }, 10000);  
+}
+export function closeEyes(){
+    $('.glasses, .eye, .eyes-container, .cursor, .messageBubbleContainer, h26 ').hide();
+}
 
 /// Red cursor move
 let mouseCursor = document.querySelector(".cursor");

@@ -1,5 +1,5 @@
 import { stopWatch } from './stopWatch.js';
-import { computerVoice } from './eyes.js';
+import { computerVoice, fadeInEyes, closeEyes } from './eyes.js';
 
 var myRandom = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 var n;
@@ -211,9 +211,10 @@ $('.rightTopFace, .rightBottomFace').mouseover(function () {
     computerVoice('voice1');
 })
 $('.dotStyle').mouseover(function () {
+    closeEyes();
     var dotColor = $(this).css('background-color');
     if (dotColor == "rgb(0, 173, 239)") {
         computerVoice('voice2');
-        $('.eye, .glasses, .eyes-container, .cursor, .messageBubbleContainer').fadeIn();
+        fadeInEyes();
     };
 })

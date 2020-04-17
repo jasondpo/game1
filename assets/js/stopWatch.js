@@ -39,7 +39,7 @@ function diff() {
 $('.stopWatch').mouseover(function () {
     stopWatch('update');
     if (totalTime.length != 6) {
-        $('.messageBubble h22').html("Timer will start after first puzzle piece is removed")
+        $('.messageBubble h22').html("Timer will start when first puzzle piece is removed")
         computerVoice('voice1');
     } else {
         $('.messageBubble h22').html(totalTime + " and counting...")
