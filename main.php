@@ -81,12 +81,12 @@ exit();
     <div class="statsColumn">
         <div class="scoreContainer">
             Score<br>
-            <input type="text" name="score" id="score" value="100">
+            <input type="text" name="score" id="score" value="100" disabled>
         </div>
         <div class="stopWatch grow">
             <div></div>Time
         </div>
-        <h28>Game<br><span>1|5</span></h28>
+        <h28>Game<br><span>1/4</span></h28>
         <h29>W - L<br><span>2-2</span></h29>
     </div>
 

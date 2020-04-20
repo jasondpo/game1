@@ -27,6 +27,7 @@ function selectTopic(this_instance) {
     $(".playerList").load("leaderboards/load-" + this_instance + ".php" + "#" + rand);
 }
 
+
 function selectFilter() {
     if (bestTime == false) {
         bestTime = true;

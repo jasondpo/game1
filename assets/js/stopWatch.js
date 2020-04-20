@@ -2,11 +2,10 @@ import { computerVoice } from './eyes.js';
 
 ///////////	GET TIME ///////
 /* This is the start time and end time. The "diff" function calculates the difference*/
-var startTime;
-var stopTime;
-var totalTime = "";
+export var startTime;
+export var stopTime;
+export var totalTime = "";
 var recordTime = true;
-
 
 export function startWatch() { // score.js calls this and begins ticking animation
     startTime = Math.round(new Date() / 1000); // time in seconds since 1970?
@@ -21,6 +20,7 @@ export function stopWatch(this_instance) {  // main.js calls this after "You Los
     stopTime = Math.round(new Date() / 1000); // time in seconds since 1970? 
     diff();
 }
+
 ///////////	CALCULATE TIME DIFFERENCE ///////
 function diff() {
 

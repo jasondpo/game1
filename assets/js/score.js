@@ -6,7 +6,7 @@ var beginScoring = false;
 $(document).on("keydown", function (event) {
     if (event.which == 80 && beginScoring == true) {
         tallyScore();
-    } else {
+    } else if (event.which == 80 && $(".overlayCurtain").is(':hidden')) {
         beginScoring = true;
         startTimer();
     };
@@ -16,7 +16,7 @@ function tallyScore() {
     $("#score").val(totalScore);
 }
 
-function startTimer() {
+export function startTimer() {
     $(".stopWatch").addClass('stopWatchGo div');
     startWatch(); // Function from stopWatch.js
 }

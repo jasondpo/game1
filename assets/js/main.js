@@ -1,7 +1,10 @@
-import { stopWatch } from './stopWatch.js';
+import { stopWatch, startTime, stopTime, totalTime } from './stopWatch.js';
 import { computerVoice, fadeInEyes, closeEyes } from './eyes.js';
+import { startTimer } from './score.js';
+// import { dehighlight } from './bottomNav.js';
 
-var myRandom = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+
+var myRandom = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
 var n;
 var ans;
 var i;
@@ -33,57 +36,68 @@ featuredImage();
 
 
 ////////// Keyboard Controls START ////////// 
+$(".overlay").click(function () {
+    $(".solveBox, .overlay").hide();
+    $("#solveField").val('');
+})
 
 // Controls for piece, solve and quit
 $(document).on("keydown", function (event) {
-    if (event.which == 80) { //P
+    if (event.which == 80 && $("#solveField").is(':hidden') && $(".overlayCurtain").is(':hidden')) { //P
         theNumber();
         chime();
-    } if (event.which == 83) { // S
-        $(".solveBox, .overlay").toggle();
+    } if (event.which == 83 && $("#solveField").is(':hidden') && $(".overlayCurtain").is(':hidden')) { // S
+        $(".solveBox, .overlay").show();
         setTimeout(function () { $("#solveField").focus(); }, 100)
-    } if (event.which == 81) { // Q
-        alert("Quit");
+    } if (event.which == 81 && $("#solveField").is(':hidden')) { // Q
+        location.reload();
     }
 });
 
+////////////////// GoBtn //////////////////
 $(document).keydown(function (e) {
-    if (e.which == 71) { // G
+    if (e.which == 71 && $("#solveField").is(':hidden') && $(".overlayCurtain").is(':hidden')) { // G
+        goBtn('run');
+    }
+});
+$(document).keyup(function (e) {
+    if (e.which == 71 && $("#solveField").is(':hidden')) { //G
+        goBtn('stop');
+    }
+});
+
+function goBtn(this_instance) {
+    if (this_instance == "run") {
         $(".imageContainer").addClass("animeBoxPlay");
         $(".puzzleLayerContainer").addClass("imageContainerStopFloat");
         $(".stopWatch").css('z-index', '0');
         $(".darkScreen").addClass("darkScreenActive");
         $(".eyes-container, .glasses").css("margin", "-100px 0px 0px -45px")
-    }
-});
-$(document).keyup(function (e) {
-    if (e.which == 71) { //G
+    } if (this_instance == "stop") {
         $(".imageContainer").removeClass("animeBoxPlay");
         $(".puzzleLayerContainer").removeClass("imageContainerStopFloat");
         $(".darkScreen").removeClass("darkScreenActive");
         $(".stopWatch").css('z-index', '');
-        $(".eyes-container, .glasses ").css("margin", "")
+        $(".eyes-container, .glasses ").css("margin", "");
     }
-});
-
-
+}
 
 /////////// Controls for clue START
 $(document).on("keydown", function (event) {
-    if (event.which == 67) { //C
+    if (event.which == 67 && $("#solveField").is(':hidden') && $(".overlayCurtain").is(':hidden')) { //C
         showHint();
     }
 });
 $(document).on("keyup", function (event) {
-    if (event.which == 67) { //C
+    if (event.which == 67 && $("#solveField").is(':hidden') && $(".overlayCurtain").is(':hidden')) { //C
         $(".hintBox, .overlay").hide();
     }
 });
 
 function showHint() {
-    var piecesLeft = myRandom.length - 6;
-    if (myRandom.length == 6) {
-        $(".hintBox, .overlay").show();
+    var piecesLeft = myRandom.length - 14;
+    if (myRandom.length == 14) {
+        $(".hintBox, .overlay").show().html("The clue is...");
     } else {
         $(".hintBox").show().html("<h12>You must remove <span>" + piecesLeft + "</span> more pieces to recieve the clue.</h12>");
         $(".overlay").show();
@@ -110,7 +124,6 @@ $(".quit").mouseover(function () {
     computerVoice('voice1');
     $('.messageBubble h22').html("Don't you dare quit on me!")
 })
-
 $(".remove, .quit, .hint, .solve, .go").mouseout(function () {
     $("h24").html("");
 })
@@ -120,22 +133,33 @@ $(".remove, .quit, .hint, .solve, .go").mouseout(function () {
 
 $(".remove").click(function () {
     theNumber();
+    chime();
+    startTimer();
+})
+
+$(".goBtn").mousedown(function () {
+    goBtn('run');
+})
+$(".goBtn").mouseup(function () {
+    goBtn('stop');
 })
 
 $(".solve").click(function () {
+    $("#solveField").val('');
     $(".solveBox, .overlay").toggle();
     setTimeout(function () { $("#solveField").focus(); }, 100)
 })
 
-var cHint = false
-$(".hint").click(function () {
-    if (cHint == false) {
-        showHint();
-        cHint = true
-    } else {
-        $(".hintBox, .overlay").hide();
-        cHint = false
-    }
+$(".hint").mousedown(function () {
+    showHint();
+})
+
+$(".hint").mouseup(function () {
+    $(".hintBox, .overlay").hide();
+})
+
+$(".quitBtn").click(function () {
+    location.reload();
 })
 //////////// Regular Click Controls ENDS //////////// 
 
@@ -149,21 +173,21 @@ function chime() {
 var audioLose = new Audio('assets/sound/youLose.mp3');
 function smartGauge() {
     resetSmartGauge();
-    if (myRandom.length >= 14) {
+    if (myRandom.length >= 22) {
         $(".dot1").addClass("dotActive");
     }
-    if (myRandom.length <= 13 && myRandom.length >= 12) {
+    if (myRandom.length <= 21 && myRandom.length >= 20) {
         $(".dot2").addClass("dotActive");
     }
-    if (myRandom.length <= 11 && myRandom.length >= 10) {
+    if (myRandom.length <= 19 && myRandom.length >= 18) {
         $(".dot3").addClass("dotActive");
     }
-    if (myRandom.length <= 9 && myRandom.length >= 8) {
+    if (myRandom.length <= 17 && myRandom.length >= 16) {
         $(".dot4").addClass("dotActive");
     }
-    if (myRandom.length <= 7 && myRandom.length >= 6) {
+    if (myRandom.length <= 15 && myRandom.length >= 14) {
         $(".dot5").addClass("dotActive");
-    } if (myRandom.length <= 5) {
+    } if (myRandom.length <= 13) {
         $(".dot5").addClass("dotActive");
         audioLose.play();
         $(".stopWatch").removeClass('stopWatchGo div');

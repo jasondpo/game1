@@ -435,13 +435,15 @@ input, select, textarea:focus {
 
 @keyframes float {
 	0% {
-		transform: translatey(0px);
+        transform: translatey(0px);
+        -moz-transform: rotate(0.02deg);
 	}
 	50% {
-		transform: translatey(-14px);
+        transform: translatey(-14px);
 	}
 	100% {
-		transform: translatey(0px);
+        transform: translatey(0px);
+        -moz-transform: rotate(-0.02deg);
 	}
 }
 .imageContainerStopFloat{
@@ -665,7 +667,7 @@ input, select, textarea:focus {
     right:0;
     bottom:0px;
     top:0;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(0,0,0,.85);
     background-image: url(../images/misc/close.png);
     background-repeat: no-repeat;
     background-position: right 22px top 22px;
