@@ -37,7 +37,7 @@ featuredImage();
 
 ////////// Keyboard Controls START ////////// 
 $(".overlay").click(function () {
-    $(".solveBox, .overlay").hide();
+    $(".solveBox, .quitBox, .overlay").hide();
     $("#solveField").val('');
 })
 
@@ -50,7 +50,7 @@ $(document).on("keydown", function (event) {
         $(".solveBox, .overlay").show();
         setTimeout(function () { $("#solveField").focus(); }, 100)
     } if (event.which == 81 && $("#solveField").is(':hidden')) { // Q
-        location.reload();
+        $(".overlay, .quitBox").toggle();
     }
 });
 
@@ -157,9 +157,14 @@ $(".hint").mousedown(function () {
 $(".hint").mouseup(function () {
     $(".hintBox, .overlay").hide();
 })
-
 $(".quitBtn").click(function () {
+    $(".overlay, .quitBox").toggle();
+})
+$("#yesBtn").click(function(){
     location.reload();
+})
+$("#noBtn").click(function(){
+    $(".overlay, .quitBox").hide();
 })
 //////////// Regular Click Controls ENDS //////////// 
 

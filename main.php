@@ -69,6 +69,11 @@ exit();
     <div class="overlayCurtain"></div>
     <div class="messageContainer"></div>
     <div class="hintBox"></div>
+    <div class="quitBox">
+        <h35><span>Quit?</span></h35>
+        <h35 id="yesBtn">YES</h35>
+        <h35 id="noBtn">NO</h35>
+    </div>
     <div class="solveBox">
         <form action="index.php">
             <input type="text" id="solveField" placeholder="Enter your best guess">

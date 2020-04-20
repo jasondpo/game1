@@ -16,6 +16,9 @@ body, html{
         <div class="colorRibbon"></div>
         <div class="logo"></div>
 	</header>
+
+	<div id="bird1"></div>
+	<div id="bird2"></div>
 	
 	<div class="loginContainer">
 

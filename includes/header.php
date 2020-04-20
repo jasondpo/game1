@@ -8,6 +8,7 @@
     <title>Quiz•Lou</title>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <link href='https://use.fontawesome.com/releases/v5.3.1/css/all.css' rel='stylesheet' type='text/css' />
+    <script src='https://cdn.jsdelivr.net/npm/vue'></script>
     <link rel='stylesheet' href='assets/css/color.css'>
     <link rel='stylesheet' href='assets/css/main.css'>
     <link rel='stylesheet' href='assets/css/header.css'>
