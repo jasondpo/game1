@@ -8,7 +8,7 @@ html, body{
     // cursor: none;
     overflow: hidden;
 }
-* {
+*:not(.inputStyle) {
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: -moz-none;

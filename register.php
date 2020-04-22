@@ -31,9 +31,9 @@
         </p>
 
 		<div>
-			<form method="post" autocomplete='off' action="register.php" @submit="checkForm" >
-											
-				<input type="text" id="registername" class="inputStyle" name="registername" placeholder="Username" onblur="if(this.placeholder==''){ this.placeholder='Username';}" onfocus="if(this.placeholder=='Username'){this.placeholder=''}" autocomplete="new-password"  v-model="username"/>
+			<form method="post" autocomplete='off' action="register.php" @submit="checkForm">
+
+				<input type="search" id="registername" class="inputStyle" name="registername" placeholder="Username" onblur="if(this.placeholder==''){ this.placeholder='Username';}" onfocus="if(this.placeholder=='Username'){this.placeholder=''}" autocomplete="new-username" v-model="username"/>
 				<br>
 				<br>
 				<input type="text" id="registerpassword" class="inputStyle" name="registerpassword" placeholder="Password" onblur="if(this.value==''){ this.placeholder='Password'; this.type='text'}" onfocus="if(this.placeholder=='Password'){ this.placeholder=''; this.type='password';}" v-model="password"/>
@@ -49,7 +49,9 @@
 	</div>	
 	
 	<script>
-
+		var ranName= Math.random();
+		$('#registername').attr('name', ranName);
+	
     const app = new Vue({
         el: '#loginApp',
         data: {
@@ -58,29 +60,22 @@
             password: null,
         },
         methods:{
-            checkForm: function (e) {
-            if (this.username.length>2 && this.password.length>2) {
-                return true;
-            }
-
-			this.errors = [];
-			
-			if (this.username.length<2) {
-                this.errors.push('Username is too short');
+			checkForm: function (e) {
+				if (!this.username && !this.username) {
+					this.errors = [];
+					this.errors.push('Username or password required.');
+					e.preventDefault();
+				} 
+				if (this.validUsername(this.username) || this.validUsername(this.password) ){
+					this.errors.push('Remove special characters');
+					e.preventDefault();
+				}
+			},
+			validUsername: function (username, password) {
+				var re = /[a-zA-Z]+[(@!#\$%\^\&*\)\(+=._-]{1,}/;
+				return re.test(username, password);
 			}
-			if (this.password.length<2) {
-                this.errors.push('Password is too short');
-            }
-
-            if (!this.username) {
-                this.errors.push('Name required.');
-            }
-            if (!this.password) {
-                this.errors.push('password required.');
-            }
-
-            // e.preventDefault();
-            }
+      
         }
     })
 
