@@ -21,14 +21,14 @@
         <div class="logo"></div>
 	</header>
 	
-	<div id="loginApp" class="loginContainer">
+	<div id="registerApp" class="loginContainer">
 
-	    <p v-if="errors.length">
-            <b>Please correct the following error(s):</b>
-            <ul>
-            <li v-for="error in errors">{{ error }}</li>
-            </ul>
-        </p>
+	    <div id="inputCorrectionMessage" v-if="errors.length">
+            <b>Please make the following adjustment(s):</b>
+			<ul>
+				<li v-for="error in errors">{{ error }}</li>
+			</ul>
+        </div>
 
 		<div>
 			<form method="post" autocomplete='off' action="register.php" @submit="checkForm">
@@ -39,7 +39,7 @@
 				<input type="text" id="registerpassword" class="inputStyle" name="registerpassword" placeholder="Password" onblur="if(this.value==''){ this.placeholder='Password'; this.type='text'}" onfocus="if(this.placeholder=='Password'){ this.placeholder=''; this.type='password';}" v-model="password"/>
 				<br>
 				<br>
-				<input type="text" id="confirmpassword" class="inputStyle" name="confirmpassword" value="Confirm Password" onblur="if(this.value==''){ this.value='Confirm Password'; this.type='text'}" onfocus="if(this.value=='Confirm Password'){ this.value=''; this.type='password';}"/>
+				<input type="text" id="confirmpassword" class="inputStyle" name="confirmpassword" placeholder="Confirm Password" onblur="if(this.value==''){ this.placeholder='Confirm Password'; this.type='text'}" onfocus="if(this.placeholder=='Confirm Password'){ this.placeholder=''; this.type='password';}" v-model="confirmpassword"/>
 				<br>
 				<br>
 				<button type="button" class="backBtn btnStyle"><a href="index.php">Back</a></button>&nbsp;&nbsp; <input type="submit" class="registerBtn btnStyle" name="registerBtn" value="Register"> 	
@@ -49,31 +49,37 @@
 	</div>	
 	
 	<script>
-		var ranName= Math.random();
-		$('#registername').attr('name', ranName);
 	
     const app = new Vue({
-        el: '#loginApp',
+        el: '#registerApp',
         data: {
             errors: [],
             username: null,
-            password: null,
+			password: null,
+			confirmpassword: null,
         },
         methods:{
 			checkForm: function (e) {
-				if (!this.username && !this.username) {
+				if (!this.username || !this.password || !this.confirmpassword) {
 					this.errors = [];
-					this.errors.push('Username or password required.');
+					this.errors.push('Username and/or password required.');
 					e.preventDefault();
 				} 
-				if (this.validUsername(this.username) || this.validUsername(this.password) ){
-					this.errors.push('Remove special characters');
+				if (this.validInput(this.username) || this.validInput(this.password) ){
+					this.errors.push('Remove special characters (e.g.: #-_@)');
 					e.preventDefault();
 				}
+				this.comparePasswords();
+				e.preventDefault();
 			},
-			validUsername: function (username, password) {
+			validInput: function (username, password) {
 				var re = /[a-zA-Z]+[(@!#\$%\^\&*\)\(+=._-]{1,}/;
 				return re.test(username, password);
+			},
+			comparePasswords: function (password, confirmpassword){
+				if(this.password!==this.confirmpassword){
+					this.errors.push('Passwords do not match.');
+				}
 			}
       
         }

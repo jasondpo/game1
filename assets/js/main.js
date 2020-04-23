@@ -30,7 +30,7 @@ loadLayers()
 
 
 function featuredImage() {
-    $(".imageContainer").css('background-image', 'url(assets/images/game/faces/asheley2.jpg)')
+    $(".imageContainer").css('background-image', 'url(assets/images/game/faces/steve.jpg)')
 }
 featuredImage();
 

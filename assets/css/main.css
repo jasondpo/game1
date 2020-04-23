@@ -203,7 +203,7 @@ h26 span {
 h27 {
   position: absolute;
   z-index: 9;
-  bottom: 60px;
+  bottom: 120px;
   left: 50%;
   margin-left: -200px;
   width: 400px;
@@ -329,15 +329,47 @@ h35 span {
   background-color: var(--pink);
 }
 
+h36 {
+  position: absolute;
+  right: 86px;
+  top: 14px;
+  display: block;
+  width: 90px;
+  height: 14px;
+  color: var(--blue-btn-category);
+  letter-spacing: .02em;
+  text-align: right;
+  cursor: pointer;
+}
+
+h36:hover {
+  text-decoration: underline;
+}
+
 input, select, textarea:focus {
   outline: 0;
 }
 
-#registername::placeholder, #registerpassword::placeholder {
+#registername::placeholder, #registerpassword::placeholder, #confirmpassword::placeholder, #userName::placeholder, #password::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #8a95a8;
   opacity: 1;
   /* Firefox */
+}
+
+#inputCorrectionMessage {
+  position: relative;
+  width: 100%;
+  color: red;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.4em;
+}
+
+#inputCorrectionMessage ul {
+  list-style: none;
+  margin: 0px 0px 14px 0px;
+  padding: 0px;
 }
 
 .messageContainer {
@@ -853,15 +885,16 @@ input, select, textarea:focus {
 }
 
 .loginContainer {
-  position: absolute;
+  position: relative;
   display: flex;
   top: 400px;
   left: 50%;
-  margin-left: -150px;
-  width: 300px;
+  margin-left: -155px;
+  width: 310px;
   height: 140px;
   border-radius: 6px;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .inputStyle {

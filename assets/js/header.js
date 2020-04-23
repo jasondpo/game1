@@ -4,9 +4,12 @@ import { computerVoice, fadeInEyes } from './eyes.js';
 // Toggle logout dialogue box
 $('.userProfilePic').click(function () {
     $('.logoutMessageBox').toggle();
+    $(this).toggleClass("userProfilePicActive");
 })
 $('html').click(function () {
     $(".logoutMessageBox").hide();
+    $('.userProfilePic').removeClass("userProfilePicActive");
+
 });
 $('.logoutMessageBox, .userProfilePic').click(function (event) {
     event.stopPropagation();
@@ -14,9 +17,11 @@ $('.logoutMessageBox, .userProfilePic').click(function (event) {
 
 //Logout Btn
 $("#LogoutBtn").mouseover(function(){
-    computerVoice('voice1');
-    fadeInEyes();
-    $('.messageBubble h22').html("Come back soon!")
+    if($(".overlayCurtain").is(':hidden')){
+        computerVoice('voice1');
+        fadeInEyes();
+        $('.messageBubble h22').html("Come back soon!")
+    }
 })
 
 

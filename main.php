@@ -15,6 +15,7 @@ exit();
 <body>
 
     <header>
+        <h36>Instructions</h36>
         <div class="colorRibbon"></div>
         <div class="userProfilePic"><?php $firstLetter = $_SESSION["userName"][0]; echo $firstLetter; ?></div>
         <div class="logo"></div>
@@ -150,7 +151,7 @@ exit();
 </div>
 
 <div class="pinkArrowDown pinkArrowDownActive"></div>
-<h27><?php echo $_SESSION["userName"]; ?>, select a category.</h27>
+<h27><?php echo $_SESSION["userName"]; ?>, choose a category.</h27>
 <h26>Includes:<span></span></h26>
 <div class="categoriesContainer">
     <ul id="btmNav">
