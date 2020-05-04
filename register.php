@@ -33,16 +33,16 @@
 		<div>
 			<form method="post" autocomplete='off' action="register.php" @submit="checkForm">
 
-				<input type="search" id="registername" class="inputStyle" name="registername" placeholder="Username" onblur="if(this.placeholder==''){ this.placeholder='Username';}" onfocus="if(this.placeholder=='Username'){this.placeholder=''}" autocomplete="new-username" v-model="username"/>
+				<input type="search" id="registername" class="inputStyle" name="registername" placeholder="Create username" onblur="if(this.placeholder==''){ this.placeholder='Create username';}" onfocus="if(this.placeholder=='Create username'){this.placeholder=''}" autocomplete="off" v-model="username"/>
 				<br>
 				<br>
-				<input type="text" id="registerpassword" class="inputStyle" name="registerpassword" placeholder="Password" onblur="if(this.value==''){ this.placeholder='Password'; this.type='text'}" onfocus="if(this.placeholder=='Password'){ this.placeholder=''; this.type='password';}" v-model="password"/>
+				<input type="text" id="registerpassword" class="inputStyle" name="registerpassword" placeholder="Create password" onblur="if(this.value==''){ this.placeholder='Create password'; this.type='text'}" onfocus="if(this.placeholder=='Create password'){ this.placeholder=''; this.type='password';}" v-model="password"/>
 				<br>
 				<br>
-				<input type="text" id="confirmpassword" class="inputStyle" name="confirmpassword" placeholder="Confirm Password" onblur="if(this.value==''){ this.placeholder='Confirm Password'; this.type='text'}" onfocus="if(this.placeholder=='Confirm Password'){ this.placeholder=''; this.type='password';}" v-model="confirmpassword"/>
+				<input type="text" id="confirmpassword" class="inputStyle" name="confirmpassword" placeholder="Reenter password" onblur="if(this.value==''){ this.placeholder='Reenter password'; this.type='text'}" onfocus="if(this.placeholder=='Reenter password'){ this.placeholder=''; this.type='password';}" v-model="confirmpassword"/>
 				<br>
 				<br>
-				<button type="button" class="backBtn btnStyle"><a href="index.php">Back</a></button>&nbsp;&nbsp; <input type="submit" class="registerBtn btnStyle" name="registerBtn" value="Register"> 	
+				<button type="button" class="backBtn btnStyle"><a href="index.php">Back</a></button>&nbsp;&nbsp; <input type="submit" class="registerBtn btnStyle" name="registerBtn" value="Confirm"> 	
 							
 			</form> 
 		</div>	

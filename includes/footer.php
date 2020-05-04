@@ -4,7 +4,8 @@
 <script type="module" src='assets/js/score.js'></script>
 <script type="module" src='assets/js/stopWatch.js'></script>
 <script src='assets/js/floatCard.js'></script>
-<script src='assets/js/bottomNav.js'></script>
+<script src='assets/js/game.js'></script>
+<script type="module" src='assets/js/bottomNav.js'></script>
 <script type="module" src='assets/js/header.js'></script>
 
 

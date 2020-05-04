@@ -37,7 +37,7 @@ body, html{
 					<input type="text" id="password" class="inputStyle" name="userPassword" placeholder="Password" onblur="if(this.value==''){ this.placeholder='Password'; this.type='text'}" onfocus="if(this.placeholder=='Password'){ this.placeholder=''; this.type='password';}" v-model="password"/>
 					<br>
 					<br>
-					<input type="submit" class="loginBtn btnStyle" name="logIn" value="Log in"> &nbsp;&nbsp; <button type="button" class="signupBtn btnStyle"><a href="register.php">Sign up</a></button> 
+					<input type="submit" class="loginBtn btnStyle" name="logIn" value="Log in"> &nbsp;&nbsp; <button type="button" class="signupBtn btnStyle"><a href="register.php">Create account</a></button> 
 								
 				</form> 
 			</div> 	

@@ -1,3 +1,6 @@
+import { resetForNextRound, cntPieces } from './main.js';
+import { tallyScore } from './score.js';
+
 //Removes curtain overlay/starts game on click
 $(".navBtnGroup").click(function () {
     dehighlight();
@@ -22,13 +25,31 @@ let bestTime = false;
 var theTopic;
 let filter = '';
 
-function selectTopic(this_instance) {
-    theTopic = this_instance // only used in selectFilter function
-    $(".playerList").load("leaderboards/load-" + this_instance + ".php" + "#" + rand);
-}
 
 
-function selectFilter() {
+$(".navBtnGroup").click(function () {
+    const rand = Math.floor((Math.random() * 10000) + 1);
+
+    if ($(this).hasClass('people')) {
+        theTopic = "people"
+        $(".playerList").load("leaderboards/load-people.php" + "#" + rand);
+    }
+    if ($(this).hasClass('vintage')) {
+        theTopic = "vintage"
+        $(".playerList").load("leaderboards/load-vintage.php" + "#" + rand);
+    }
+    if ($(this).hasClass('cartoons')) {
+        theTopic = "cartoons"
+        $(".playerList").load("leaderboards/load-cartoons.php" + "#" + rand);
+    }
+    if ($(this).hasClass('jcco')) {
+        theTopic = "jcco"
+        $(".playerList").load("leaderboards/load-jcco.php" + "#" + rand);
+    }
+});
+
+
+$('.topPlayersSpacer').click(function () {
     if (bestTime == false) {
         bestTime = true;
         filter = 'time';
@@ -39,26 +60,28 @@ function selectFilter() {
     $(".playerList").load("leaderboards/load-" + theTopic + ".php" + "#" + rand, {
         filter: filter
     });
-}
+})
+
 
 // Show description on hover
-function showDesc(this_instance) {
+$(".navBtnGroup").mouseover(function () {
     $(".pinkArrowDown").removeClass('pinkArrowDownActive').hide();
     $("h27").hide();
     $("h26").fadeIn();
-    if (this_instance == "people") {
+    if ($(this).hasClass('people')) {
         $("h26 span").html(" Celebrities • Characters • Local");
     }
-    if (this_instance == "vintage") {
+    if ($(this).hasClass('vintage')) {
         $("h26 span").html(" Defunct Products • Shuttered Businesses");
     }
-    if (this_instance == "cartoons") {
+    if ($(this).hasClass('cartoons')) {
         $("h26 span").html(" Comics • Manga • CGI • Traditional");
     }
-    if (this_instance == "jcco") {
+    if ($(this).hasClass('jcco')) {
         $("h26 span").html(" Coworkers • Office Items • Buildings");
     }
-}
+});
+
 // Return to clicked description on mouseout
 var content = null;
 $(document).on('mouseout', '#btmNav li', function () {
@@ -73,3 +96,104 @@ $(document).on('click', '#btmNav li', function () {
     content = $('h26 span').html();
 })
 
+//////////////////// MAIN LOGIC STARTS ////////////////////
+
+var x = 1;
+var category = "";
+var theAns = "";
+var gameLength = "";
+var round = 1;
+
+
+$(".navBtnGroup").click(function () {
+    if ($(this).hasClass('people')) {
+        category = "0";
+    }
+    if ($(this).hasClass('vintage')) {
+        category = "1"
+    }
+    if ($(this).hasClass('cartoons')) {
+        category = "2"
+    }
+    if ($(this).hasClass('jcco')) {
+        category = "3"
+    }
+    startgame(category, 'false');
+    resetForNewGame();
+    x = 1
+});
+
+function startgame(category, status) {
+    var puzzleData = JSON.parse(puzzle);
+    gameLength = Object.keys(puzzleData[0][category]).length;
+    if (status == 'true') { x++ };
+    var gl = parseInt(gameLength)
+    if (x > gl) {
+        alert('Show stats')
+    } else {
+        var gamePic = puzzleData[0][category]["game" + x].image;
+        $(".imageContainer").css('background-image', gamePic);
+        $("#hintContainer").html(puzzleData[0][category]["game" + x].hint);
+    }
+}
+
+// Retrieve acceptable answers
+var theAns = "";
+$('#userAnsForm').submit(function (e) {
+    e.preventDefault();
+    var obj = JSON.parse(puzzle);
+    theAns = obj[0][category]["game" + x].answers;
+    compareAns();
+})
+
+function compareAns() {
+    var myAns = $('#solveField').val();
+    var n = theAns.includes(myAns);
+    if (n == true) {
+        winLose('win');
+    } else {
+        winLose('lose');
+        scorePenalty();
+    }
+    startgame(category, 'true');
+    resetForNextRound();
+    round++
+    $("h28 span").html(round + "/4");
+}
+
+var lose = 0;
+var win = 0;
+function winLose(this_instance) {
+    if (this_instance == "lose") {
+        lose++
+        $('h29 span').html(win + "-" + lose)
+    }
+    if (this_instance == "win") {
+        win++
+        $('h29 span').html(win + "-" + lose)
+    }
+}
+
+function scorePenalty() {
+    var ts = 0;
+    var penalty = setInterval(function () {
+        ts++
+        if (ts >= cntPieces() + 1) { clearInterval(penalty); ts = 0 }
+        tallyScore()
+    }, 50);
+}
+
+/// Reset for new game NOT working 
+/// Just refresh the entire page and use a "Super Global" of some sort to highlight the selected category
+
+// function resetForNewGame() {
+//     resetForNextRound();
+//     $("#score").val('100');
+//     $('h28 span').html("1/4");
+//     $('h29 span').html("0-0");
+//     lose = 0;
+//     win = 0;
+//     // round = 1; 
+// }
+
+//////////////////// MAIN LOGIC ENDS ////////////////////

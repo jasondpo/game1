@@ -39,7 +39,11 @@ exit();
                     <option value="">Select Player</option>
                     <?php displayPlayersMessenger(); ?>
                 </select>
-                <textarea name="userMessageBox" id="userMessageBox" cols="30" rows="10" placeholder="What's on your mind, <?php echo $_SESSION["userName"]; ?>?"></textarea>
+                <textarea name="userMessageBox" id="userMessageBox" cols="30" rows="10" 
+                placeholder="<?php echo $_SESSION["userName"]; ?>, send a message to another player." 
+                onblur="if(this.placeholder==''){ this.placeholder='<?php echo $_SESSION['userName']; ?>, send a message to another player.';}" 
+                onfocus="if(this.placeholder=='<?php echo $_SESSION['userName']; ?>, send a message to another player.'){this.placeholder=''}" 
+                autocomplete="off"></textarea>
                 <input type="submit" class="sendMessageBtn btnStyle" name="sendMessageBtn" value="Send">
             </form>   
 
@@ -76,7 +80,7 @@ exit();
         <h35 id="noBtn">NO</h35>
     </div>
     <div class="solveBox">
-        <form action="index.php">
+        <form id="userAnsForm">
             <input type="text" id="solveField" placeholder="Enter your best guess">
             <input type="submit" id="solveBtn">
         </form>
@@ -93,14 +97,14 @@ exit();
             <div></div>Time
         </div>
         <h28>Game<br><span>1/4</span></h28>
-        <h29>W - L<br><span>2-2</span></h29>
+        <h29>W - L<br><span>0-0</span></h29>
     </div>
 
     <section class="move-area"></section>
 
     <div class="leaderboard">
 
-        <div class="topPlayersSpacer" onclick="selectFilter()">
+        <div class="topPlayersSpacer">
             <h17>
                 <h23></h23> <h25>Best Scores</h25>&nbsp;&nbsp;<i class="downArrow"></i>
             </h17>
@@ -158,19 +162,19 @@ exit();
         <li>
             <i class="leftArrow"></i>
         </li>
-        <li class="navBtnGroup" onmouseover="showDesc('people')" onclick="selectTopic('people')">
+        <li class="navBtnGroup people" onclick="categorySwitcher('0')">
             <div class="arrow-down"></div>
             <h21 class="btnCategory">People</h21>
         </li>
-        <li class="navBtnGroup vintage" onmouseover="showDesc('vintage')"  onclick="selectTopic('vintage')">
+        <li class="navBtnGroup vintage"  onclick="categorySwitcher('1')">
             <div class="arrow-down"></div>
             <h21 class="btnCategory">Vintage</h21>
         </li>
-        <li class="navBtnGroup cartoons" onmouseover="showDesc('cartoons')" onclick="selectTopic('cartoons')">
+        <li class="navBtnGroup cartoons" onclick="categorySwitcher('2')">
             <div class="arrow-down"></div>
             <h21 class="btnCategory">Cartoons</h21>
         </li>
-        <li class="navBtnGroup jcco" onmouseover="showDesc('jcco')" onclick="selectTopic('jcco')">
+        <li class="navBtnGroup jcco" onclick="categorySwitcher('3')">
             <div class="arrow-down"></div>
             <h21 class="btnCategory">JCCO</h21>
         </li>

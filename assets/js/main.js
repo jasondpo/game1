@@ -1,7 +1,6 @@
-import { stopWatch, startTime, stopTime, totalTime } from './stopWatch.js';
+import { stopWatch } from './stopWatch.js';
 import { computerVoice, fadeInEyes, closeEyes } from './eyes.js';
-import { startTimer } from './score.js';
-// import { dehighlight } from './bottomNav.js';
+import { startTimer, resetBeginScoring } from './score.js';
 
 
 var myRandom = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
@@ -9,6 +8,7 @@ var n;
 var ans;
 var i;
 var layer = "";
+var piecesLeft = "";
 
 //Reduces number of peices after every click
 function theNumber() {
@@ -17,8 +17,12 @@ function theNumber() {
     $("#num").val(ans);
     $("[data-piece~=" + ans + "]").fadeOut();
     smartGauge()
+    piecesLeft = myRandom.length;
 }
 
+export function cntPieces() {
+    return piecesLeft; // for score penalty
+}
 
 function loadLayers() {
     for (i = 0; i < myRandom.length; i++) {
@@ -27,12 +31,6 @@ function loadLayers() {
     $(".puzzleLayerContainer").html(layer)
 }
 loadLayers()
-
-
-function featuredImage() {
-    $(".imageContainer").css('background-image', 'url(assets/images/game/faces/steve.jpg)')
-}
-featuredImage();
 
 
 ////////// Keyboard Controls START ////////// 
@@ -160,10 +158,10 @@ $(".hint").mouseup(function () {
 $(".quitBtn").click(function () {
     $(".overlay, .quitBox").toggle();
 })
-$("#yesBtn").click(function(){
+$("#yesBtn").click(function () {
     location.reload();
 })
-$("#noBtn").click(function(){
+$("#noBtn").click(function () {
     $(".overlay, .quitBox").hide();
 })
 //////////// Regular Click Controls ENDS //////////// 
@@ -247,3 +245,32 @@ $('.dotStyle').mouseover(function () {
         fadeInEyes();
     };
 })
+
+
+//////////////////// Reset for next round or game ////////////////////
+
+export function resetForNextRound() {
+    myRandom = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+    resetSmartGauge();
+    n;
+    ans;
+    i;
+    layer = "";
+    loadLayers();
+    resetBeginScoringSource()
+}
+
+export function resetBeginScoringSource() {
+    resetBeginScoring()
+}
+
+// export function resetForNewGame() {
+//     resetForNextRound();
+//     $("#score").val('100');
+//     $('h28 span').html("1/4");
+//     $('h29 span').html("0-0");
+//     lose = 0;
+//     win = 0;
+//     round = 1;
+// }
+

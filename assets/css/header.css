@@ -88,6 +88,9 @@ header{
     background-color: #F9FAFB;
     margin-bottom: 4px;
 }
+#userMessageBox::placeholder{
+    color:#8a95a8;
+}
 .userMessageBoxArrowUp{
     position: absolute;
 	width: 0; 

@@ -1,6 +1,6 @@
 import { startWatch } from './stopWatch.js';
 
-var totalScore = 100
+var totalScore = 100;
 var beginScoring = false;
 
 $(document).on("keydown", function (event) {
@@ -11,7 +11,7 @@ $(document).on("keydown", function (event) {
         startTimer();
     };
 });
-function tallyScore() {
+export function tallyScore() {
     totalScore--
     $("#score").val(totalScore);
 }
@@ -19,4 +19,8 @@ function tallyScore() {
 export function startTimer() {
     $(".stopWatch").addClass('stopWatchGo div');
     startWatch(); // Function from stopWatch.js
+}
+
+export function resetBeginScoring() {
+    beginScoring = false
 }

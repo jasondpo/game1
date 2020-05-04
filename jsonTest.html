@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <title>json test</title>
+    <title>json game test</title>
 
     <style>
         #picBox {
@@ -25,40 +25,57 @@
     <p id="answers"></p>
     <br>
     <br>
-    <p id="app"></p>
-    <br>
-    <br>
-    <button id="start" onclick="startgame();">Start</button>
+    <button id="start" onclick="startgame();">Start Game</button>
     <br>
     <br>
     <br>
     <br>
     <input type="text" id="myAns">
     <button id="submit">submit</button>
+    <br>
+    <br>
+    <input type="button" id="hintBtn" value="hint">
+    <br>
+    <br>
+    <p id="hintContainer" style="display:none"></p>
+
+    <ul>
+        <li onclick="categorySwitcher('0')">Category 1</li>
+        <li onclick="categorySwitcher('1')">Category 2</li>
+        <li onclick="categorySwitcher('2')">Category 3</li>
+        <li onclick="categorySwitcher('3')">Category 4</li>
+    </ul>
 
     <script>
 
         // Start game
 
-        var x = 0;
+        var x = 1;
+        var category = "";
+        var storedCategory = "";
 
-        function startgame() {
-            x++
-            $("#app").html("");
+        function categorySwitcher(chosenCategory) {
+            category = chosenCategory
+            startgame(category, 'false');
+            x = 1
+        }
+
+        function startgame(category, status) {
+            if (status == 'true') { x++ }
 
             $.getJSON("assets/js/game.json", function (obj) {
-                gameLength = Object.keys(obj[0]).length;
+                gameLength = Object.keys(obj[category]).length;
                 var gl = parseInt(gameLength)
                 if (x > gl) {
                     alert('Show stats')
                 } else {
-                    var gamePic = obj[0]["game" + x].image
+                    var gamePic = obj[category]["game" + x].image
                     $("#picBox").css('background-image', gamePic);
-                    $("#answers").html(obj[0]["game" + x].answers);
+                    $("#answers").html(obj[category]["game" + x].answers);
+                    $("#hintContainer").html(obj[category]["game" + x].hint);
                 }
             })
         }
-
 
         // Check answers
         $('#submit').click(function () {
@@ -66,12 +83,19 @@
             var myAns = $('#myAns').val();
             var n = str.includes(myAns);
             if (n == true) {
-                startgame();
+                startgame(category, 'true');
             } else {
-                alert('false')
+                alert('Wrong')
             }
         })
 
+        // Show hint
+        $("#hintBtn").mousedown(function () {
+            $("#hintContainer").show();
+        })
+        $("#hintBtn").mouseup(function () {
+            $("#hintContainer").hide();
+        })
 
     </script>
 
