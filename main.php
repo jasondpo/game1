@@ -159,9 +159,7 @@ exit();
 <h26>Includes:<span></span></h26>
 <div class="categoriesContainer">
     <ul id="btmNav">
-        <li>
-            <i class="leftArrow"></i>
-        </li>
+  
         <li class="navBtnGroup people" onclick="categorySwitcher('0')">
             <div class="arrow-down"></div>
             <h21 class="btnCategory">People</h21>
@@ -178,9 +176,7 @@ exit();
             <div class="arrow-down"></div>
             <h21 class="btnCategory">JCCO</h21>
         </li>
-        <li>
-            <i class="rightArrow"></i>
-        </li>
+
     </ul>
 </div>
 

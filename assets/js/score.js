@@ -24,3 +24,8 @@ export function startTimer() {
 export function resetBeginScoring() {
     beginScoring = false
 }
+
+export function actualScore() {
+    if (totalScore == "") { totalScore = 100 }
+    return totalScore; // for resetForNewGame()
+}

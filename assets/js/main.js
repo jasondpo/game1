@@ -18,10 +18,12 @@ function theNumber() {
     $("[data-piece~=" + ans + "]").fadeOut();
     smartGauge()
     piecesLeft = myRandom.length;
+    cntPieces();
 }
 
-export function cntPieces() {
-    return piecesLeft; // for score penalty
+export function cntPieces(this_instance) {
+    if (piecesLeft == "" || piecesLeft == "reset") { piecesLeft = 25 }
+    return piecesLeft; // for score penalty and resetForNewGame()
 }
 
 function loadLayers() {
@@ -247,7 +249,7 @@ $('.dotStyle').mouseover(function () {
 })
 
 
-//////////////////// Reset for next round or game ////////////////////
+//////////////////// Reset for next round ////////////////////
 
 export function resetForNextRound() {
     myRandom = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
@@ -258,19 +260,13 @@ export function resetForNextRound() {
     layer = "";
     loadLayers();
     resetBeginScoringSource()
+    piecesLeft = 25;
+    cntPieces('reset');
 }
 
 export function resetBeginScoringSource() {
     resetBeginScoring()
 }
 
-// export function resetForNewGame() {
-//     resetForNextRound();
-//     $("#score").val('100');
-//     $('h28 span').html("1/4");
-//     $('h29 span').html("0-0");
-//     lose = 0;
-//     win = 0;
-//     round = 1;
-// }
+
 

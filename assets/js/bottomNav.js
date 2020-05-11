@@ -1,5 +1,5 @@
 import { resetForNextRound, cntPieces } from './main.js';
-import { tallyScore } from './score.js';
+import { tallyScore, actualScore } from './score.js';
 
 //Removes curtain overlay/starts game on click
 $(".navBtnGroup").click(function () {
@@ -119,7 +119,7 @@ $(".navBtnGroup").click(function () {
         category = "3"
     }
     startgame(category, 'false');
-    resetForNewGame();
+    resetForNewGame(category);
     x = 1
 });
 
@@ -183,17 +183,37 @@ function scorePenalty() {
     }, 50);
 }
 
-/// Reset for new game NOT working 
-/// Just refresh the entire page and use a "Super Global" of some sort to highlight the selected category
+/// Reset for new game 
+function resetForNewGame(this_instance) {
+    if (actualScore() <= 99 && $(".overlayCurtain").is(":hidden") && cntPieces() <= 24) {
+        resetForNextRound();
+        window.location.href = "main.php#" + this_instance;
+        location.reload();
+    }
+}
 
-// function resetForNewGame() {
-//     resetForNextRound();
-//     $("#score").val('100');
-//     $('h28 span').html("1/4");
-//     $('h29 span').html("0-0");
-//     lose = 0;
-//     win = 0;
-//     // round = 1; 
-// }
-
+// Check for category in URL string on page load
+function setGameBySuperGlobal() {
+    var gcat = "";
+    const rand = Math.floor((Math.random() * 10000) + 1);
+    var url = window.location.href;
+    var tabId = url.split("#").pop();
+    if (tabId == 0) { gcat = 'people' }
+    if (tabId == 1) { gcat = 'vintage' }
+    if (tabId == 2) { gcat = 'cartoons' }
+    if (tabId == 3) { gcat = 'jcco' }
+    if (tabId != '') {
+        $(".playerList").load("leaderboards/load-" + gcat + ".php" + "#" + rand, {
+            filter: filter
+        });
+        startgame(tabId, 'false');
+        $("h27").hide();
+        $(".overlayCurtain").hide();
+        dehighlight();
+        $(".pinkArrowDown").removeClass('pinkArrowDownActive').hide();
+        $('#btmNav .' + gcat + '').find('.btnCategory').addClass("btnCategoryActive");
+        $('#btmNav .' + gcat + '').find('.arrow-down').show();
+    }
+}
+setGameBySuperGlobal();
 //////////////////// MAIN LOGIC ENDS ////////////////////
